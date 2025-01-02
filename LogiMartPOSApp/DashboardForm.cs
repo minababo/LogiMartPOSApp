@@ -118,6 +118,11 @@ namespace LogiMartPOSApp
         {
             try
             {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
                 string query = @"
             SELECT TOP 10 
                 InvoiceID, 
@@ -133,15 +138,28 @@ namespace LogiMartPOSApp
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         listViewRecentSales.Items.Clear();
+                        listViewRecentSales.Columns.Clear();
+                        listViewRecentSales.Columns.Add("Invoice ID", 100);
+                        listViewRecentSales.Columns.Add("Cashier", 150);
+                        listViewRecentSales.Columns.Add("Customer", 150);
+                        listViewRecentSales.Columns.Add("Date", 150);
+                        listViewRecentSales.Columns.Add("Total", 100);
 
-                        while (reader.Read())
+                        if (!reader.HasRows)
                         {
-                            ListViewItem item = new ListViewItem(reader["InvoiceID"].ToString());
-                            item.SubItems.Add(reader["Cashier"].ToString());
-                            item.SubItems.Add(reader["Customer"].ToString());
-                            item.SubItems.Add(Convert.ToDateTime(reader["DateRecorded"]).ToString("yyyy-MM-dd"));
-                            item.SubItems.Add(Convert.ToDecimal(reader["Total"]).ToString("C"));
-                            listViewRecentSales.Items.Add(item);
+                            MessageBox.Show("No recent sales found!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            while (reader.Read())
+                            {
+                                ListViewItem item = new ListViewItem(reader["InvoiceID"].ToString());
+                                item.SubItems.Add(reader["Cashier"].ToString());
+                                item.SubItems.Add(reader["Customer"].ToString());
+                                item.SubItems.Add(Convert.ToDateTime(reader["DateRecorded"]).ToString("yyyy-MM-dd"));
+                                item.SubItems.Add(Convert.ToDecimal(reader["Total"]).ToString("N2"));
+                                listViewRecentSales.Items.Add(item);
+                            }
                         }
                     }
                 }
@@ -151,7 +169,6 @@ namespace LogiMartPOSApp
                 MessageBox.Show("Error loading recent sales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
 
         private void btnLogout_Click(object sender, EventArgs e)

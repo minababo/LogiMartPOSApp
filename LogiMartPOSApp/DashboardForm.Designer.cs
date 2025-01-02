@@ -33,11 +33,17 @@ namespace LogiMartPOSApp
         private void InitializeComponent()
         {
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.btnReports = new RoundedButton();
+            this.btnNewSale = new RoundedButton();
+            this.btnProducts = new RoundedButton();
+            this.btnCustomers = new RoundedButton();
+            this.btnSales = new RoundedButton();
+            this.btnDiscounts = new RoundedButton();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.recentSalesPanel = new System.Windows.Forms.Panel();
-            this.lblRecentSalesTitle = new System.Windows.Forms.Label();
             this.listViewRecentSales = new System.Windows.Forms.ListView();
+            this.lblRecentSalesTitle = new System.Windows.Forms.Label();
             this.announcementPanel = new System.Windows.Forms.Panel();
             this.lblAnnouncementMessage = new System.Windows.Forms.Label();
             this.lblAnnouncementTitle = new System.Windows.Forms.Label();
@@ -45,14 +51,8 @@ namespace LogiMartPOSApp
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblLogo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnReports = new RoundedButton();
-            this.btnNewSale = new RoundedButton();
-            this.btnProducts = new RoundedButton();
-            this.btnCustomers = new RoundedButton();
-            this.btnSales = new RoundedButton();
-            this.btnDiscounts = new RoundedButton();
             this.btnLogout = new RoundedButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelSidebar.SuspendLayout();
             this.panelBackground.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -76,166 +76,6 @@ namespace LogiMartPOSApp
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(366, 800);
             this.panelSidebar.TabIndex = 1;
-            // 
-            // panelBackground
-            // 
-            this.panelBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.panelBackground.Controls.Add(this.mainPanel);
-            this.panelBackground.Controls.Add(this.panelSidebar);
-            this.panelBackground.Controls.Add(this.panelTopBar);
-            this.panelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBackground.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelBackground.Location = new System.Drawing.Point(0, 0);
-            this.panelBackground.Name = "panelBackground";
-            this.panelBackground.Size = new System.Drawing.Size(1600, 900);
-            this.panelBackground.TabIndex = 0;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(250)))), ((int)(((byte)(245)))));
-            this.mainPanel.Controls.Add(this.recentSalesPanel);
-            this.mainPanel.Controls.Add(this.announcementPanel);
-            this.mainPanel.Controls.Add(this.lblWelcome);
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(366, 100);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1234, 800);
-            this.mainPanel.TabIndex = 3;
-            // 
-            // recentSalesPanel
-            // 
-            this.recentSalesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.recentSalesPanel.AutoSize = true;
-            this.recentSalesPanel.BackColor = System.Drawing.Color.White;
-            this.recentSalesPanel.Controls.Add(this.listViewRecentSales);
-            this.recentSalesPanel.Controls.Add(this.lblRecentSalesTitle);
-            this.recentSalesPanel.Location = new System.Drawing.Point(50, 230);
-            this.recentSalesPanel.Name = "recentSalesPanel";
-            this.recentSalesPanel.Size = new System.Drawing.Size(1134, 450);
-            this.recentSalesPanel.TabIndex = 0;
-            // 
-            // lblRecentSalesTitle
-            // 
-            this.lblRecentSalesTitle.AutoSize = true;
-            this.lblRecentSalesTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecentSalesTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblRecentSalesTitle.Location = new System.Drawing.Point(20, 10);
-            this.lblRecentSalesTitle.Name = "lblRecentSalesTitle";
-            this.lblRecentSalesTitle.Size = new System.Drawing.Size(187, 38);
-            this.lblRecentSalesTitle.TabIndex = 0;
-            this.lblRecentSalesTitle.Text = "Recent Sales:";
-            // 
-            // listViewRecentSales
-            // 
-            this.listViewRecentSales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewRecentSales.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewRecentSales.HideSelection = false;
-            this.listViewRecentSales.Location = new System.Drawing.Point(20, 50);
-            this.listViewRecentSales.Name = "listViewRecentSales";
-            this.listViewRecentSales.Size = new System.Drawing.Size(1084, 380);
-            this.listViewRecentSales.TabIndex = 1;
-            this.listViewRecentSales.UseCompatibleStateImageBehavior = false;
-            this.listViewRecentSales.View = System.Windows.Forms.View.Details;
-
-            // Add columns to the ListView
-            this.listViewRecentSales.Columns.Add("Invoice ID", 150);
-            this.listViewRecentSales.Columns.Add("Cashier", 150);
-            this.listViewRecentSales.Columns.Add("Customer", 200);
-            this.listViewRecentSales.Columns.Add("Date", 150);
-            this.listViewRecentSales.Columns.Add("Total", 150);
-            // 
-            // announcementPanel
-            // 
-            this.announcementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.announcementPanel.AutoSize = true;
-            this.announcementPanel.BackColor = System.Drawing.Color.White;
-            this.announcementPanel.Controls.Add(this.lblAnnouncementMessage);
-            this.announcementPanel.Controls.Add(this.lblAnnouncementTitle);
-            this.announcementPanel.Location = new System.Drawing.Point(50, 110);
-            this.announcementPanel.Name = "announcementPanel";
-            this.announcementPanel.Size = new System.Drawing.Size(1134, 100);
-            this.announcementPanel.TabIndex = 0;
-            // 
-            // lblAnnouncementMessage
-            // 
-            this.lblAnnouncementMessage.AutoSize = true;
-            this.lblAnnouncementMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnnouncementMessage.ForeColor = System.Drawing.Color.Black;
-            this.lblAnnouncementMessage.Location = new System.Drawing.Point(20, 50);
-            this.lblAnnouncementMessage.Name = "lblAnnouncementMessage";
-            this.lblAnnouncementMessage.Size = new System.Drawing.Size(496, 32);
-            this.lblAnnouncementMessage.TabIndex = 0;
-            this.lblAnnouncementMessage.Text = "System will be under maintenance on [DATE].";
-            // 
-            // lblAnnouncementTitle
-            // 
-            this.lblAnnouncementTitle.AutoSize = true;
-            this.lblAnnouncementTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnnouncementTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblAnnouncementTitle.Location = new System.Drawing.Point(20, 10);
-            this.lblAnnouncementTitle.Name = "lblAnnouncementTitle";
-            this.lblAnnouncementTitle.Size = new System.Drawing.Size(227, 38);
-            this.lblAnnouncementTitle.TabIndex = 1;
-            this.lblAnnouncementTitle.Text = "Announcement:";
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.Black;
-            this.lblWelcome.Location = new System.Drawing.Point(50, 50);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(417, 48);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "Welcome, [User Name]!";
-            // 
-            // panelTopBar
-            // 
-            this.panelTopBar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelTopBar.Controls.Add(this.imgLogo);
-            this.panelTopBar.Controls.Add(this.lblLogo);
-            this.panelTopBar.Controls.Add(this.btnLogout);
-            this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTopBar.Name = "panelTopBar";
-            this.panelTopBar.Size = new System.Drawing.Size(1600, 100);
-            this.panelTopBar.TabIndex = 2;
-            // 
-            // imgLogo
-            // 
-            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogo.BackgroundImage = global::LogiMartPOSApp.Properties.Resources.logo;
-            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgLogo.Location = new System.Drawing.Point(71, 27);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(50, 50);
-            this.imgLogo.TabIndex = 10;
-            this.imgLogo.TabStop = false;
-            // 
-            // lblLogo
-            // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogo.ForeColor = System.Drawing.Color.Black;
-            this.lblLogo.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.lblLogo.Location = new System.Drawing.Point(127, 27);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(174, 48);
-            this.lblLogo.TabIndex = 9;
-            this.lblLogo.Text = "LogiMart";
-            this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(21, 76);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 3;
             // 
             // btnReports
             // 
@@ -351,6 +191,152 @@ namespace LogiMartPOSApp
             this.btnDiscounts.UseVisualStyleBackColor = false;
             this.btnDiscounts.Click += new System.EventHandler(this.btnDiscounts_Click);
             // 
+            // panelBackground
+            // 
+            this.panelBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.panelBackground.Controls.Add(this.mainPanel);
+            this.panelBackground.Controls.Add(this.panelSidebar);
+            this.panelBackground.Controls.Add(this.panelTopBar);
+            this.panelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBackground.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelBackground.Location = new System.Drawing.Point(0, 0);
+            this.panelBackground.Name = "panelBackground";
+            this.panelBackground.Size = new System.Drawing.Size(1600, 900);
+            this.panelBackground.TabIndex = 0;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(247)))), ((int)(((byte)(193)))));
+            this.mainPanel.Controls.Add(this.recentSalesPanel);
+            this.mainPanel.Controls.Add(this.announcementPanel);
+            this.mainPanel.Controls.Add(this.lblWelcome);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(366, 100);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1234, 800);
+            this.mainPanel.TabIndex = 3;
+            // 
+            // recentSalesPanel
+            // 
+            this.recentSalesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.recentSalesPanel.BackColor = System.Drawing.Color.White;
+            this.recentSalesPanel.Controls.Add(this.listViewRecentSales);
+            this.recentSalesPanel.Controls.Add(this.lblRecentSalesTitle);
+            this.recentSalesPanel.Location = new System.Drawing.Point(50, 230);
+            this.recentSalesPanel.Name = "recentSalesPanel";
+            this.recentSalesPanel.Size = new System.Drawing.Size(1134, 486);
+            this.recentSalesPanel.TabIndex = 0;
+            // 
+            // listViewRecentSales
+            // 
+            this.listViewRecentSales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewRecentSales.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewRecentSales.HideSelection = false;
+            this.listViewRecentSales.Location = new System.Drawing.Point(20, 50);
+            this.listViewRecentSales.Name = "listViewRecentSales";
+            this.listViewRecentSales.Size = new System.Drawing.Size(1084, 413);
+            this.listViewRecentSales.TabIndex = 1;
+            this.listViewRecentSales.UseCompatibleStateImageBehavior = false;
+            this.listViewRecentSales.View = System.Windows.Forms.View.Details;
+            // 
+            // lblRecentSalesTitle
+            // 
+            this.lblRecentSalesTitle.AutoSize = true;
+            this.lblRecentSalesTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecentSalesTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblRecentSalesTitle.Location = new System.Drawing.Point(20, 10);
+            this.lblRecentSalesTitle.Name = "lblRecentSalesTitle";
+            this.lblRecentSalesTitle.Size = new System.Drawing.Size(187, 38);
+            this.lblRecentSalesTitle.TabIndex = 0;
+            this.lblRecentSalesTitle.Text = "Recent Sales:";
+            // 
+            // announcementPanel
+            // 
+            this.announcementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.announcementPanel.AutoSize = true;
+            this.announcementPanel.BackColor = System.Drawing.Color.White;
+            this.announcementPanel.Controls.Add(this.lblAnnouncementMessage);
+            this.announcementPanel.Controls.Add(this.lblAnnouncementTitle);
+            this.announcementPanel.Location = new System.Drawing.Point(50, 110);
+            this.announcementPanel.Name = "announcementPanel";
+            this.announcementPanel.Size = new System.Drawing.Size(1134, 100);
+            this.announcementPanel.TabIndex = 0;
+            // 
+            // lblAnnouncementMessage
+            // 
+            this.lblAnnouncementMessage.AutoSize = true;
+            this.lblAnnouncementMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnnouncementMessage.ForeColor = System.Drawing.Color.Black;
+            this.lblAnnouncementMessage.Location = new System.Drawing.Point(20, 50);
+            this.lblAnnouncementMessage.Name = "lblAnnouncementMessage";
+            this.lblAnnouncementMessage.Size = new System.Drawing.Size(610, 32);
+            this.lblAnnouncementMessage.TabIndex = 0;
+            this.lblAnnouncementMessage.Text = "System will be under maintenance on 7th January 2025.";
+            // 
+            // lblAnnouncementTitle
+            // 
+            this.lblAnnouncementTitle.AutoSize = true;
+            this.lblAnnouncementTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnnouncementTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblAnnouncementTitle.Location = new System.Drawing.Point(20, 10);
+            this.lblAnnouncementTitle.Name = "lblAnnouncementTitle";
+            this.lblAnnouncementTitle.Size = new System.Drawing.Size(227, 38);
+            this.lblAnnouncementTitle.TabIndex = 1;
+            this.lblAnnouncementTitle.Text = "Announcement:";
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.Black;
+            this.lblWelcome.Location = new System.Drawing.Point(50, 50);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(417, 48);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "Welcome, [User Name]!";
+            // 
+            // panelTopBar
+            // 
+            this.panelTopBar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelTopBar.Controls.Add(this.imgLogo);
+            this.panelTopBar.Controls.Add(this.lblLogo);
+            this.panelTopBar.Controls.Add(this.btnLogout);
+            this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopBar.Location = new System.Drawing.Point(0, 0);
+            this.panelTopBar.Name = "panelTopBar";
+            this.panelTopBar.Size = new System.Drawing.Size(1600, 100);
+            this.panelTopBar.TabIndex = 2;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
+            this.imgLogo.BackgroundImage = global::LogiMartPOSApp.Properties.Resources.logo;
+            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgLogo.Location = new System.Drawing.Point(71, 27);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(50, 50);
+            this.imgLogo.TabIndex = 10;
+            this.imgLogo.TabStop = false;
+            // 
+            // lblLogo
+            // 
+            this.lblLogo.AutoSize = true;
+            this.lblLogo.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogo.ForeColor = System.Drawing.Color.Black;
+            this.lblLogo.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblLogo.Location = new System.Drawing.Point(127, 27);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(174, 48);
+            this.lblLogo.TabIndex = 9;
+            this.lblLogo.Text = "LogiMart";
+            this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -366,6 +352,13 @@ namespace LogiMartPOSApp
             this.btnLogout.TabIndex = 3;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(21, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 3;
             // 
             // DashboardForm
             // 
