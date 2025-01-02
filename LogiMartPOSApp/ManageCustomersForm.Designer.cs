@@ -37,20 +37,36 @@ namespace LogiMartPOSApp
             this.listViewCustomers = new System.Windows.Forms.ListView();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.recentSalesPanel = new System.Windows.Forms.Panel();
+            this.panelDeleteCustomer = new System.Windows.Forms.Panel();
+            this.lblDeleteCustomer = new System.Windows.Forms.Label();
+            this.txtDeleteCustomerID = new System.Windows.Forms.TextBox();
+            this.btnDeleteCustomer = new RoundedButton();
+            this.lblDeleteCustomerID = new System.Windows.Forms.Label();
+            this.panelAddCustomer = new System.Windows.Forms.Panel();
+            this.lblRegisterCustomer = new System.Windows.Forms.Label();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.btnAddCustomer = new RoundedButton();
+            this.lblCustomerName = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.customersPanel = new System.Windows.Forms.Panel();
             this.lblCustomersTitle = new System.Windows.Forms.Label();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnReports = new RoundedButton();
-            this.btnNewSale = new RoundedButton();
             this.btnProducts = new RoundedButton();
             this.btnCustomers = new RoundedButton();
             this.btnSales = new RoundedButton();
             this.btnDiscounts = new RoundedButton();
+            this.btnNewSale = new RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panelTopBar.SuspendLayout();
             this.panelBackground.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            this.recentSalesPanel.SuspendLayout();
+            this.panelDeleteCustomer.SuspendLayout();
+            this.panelAddCustomer.SuspendLayout();
+            this.customersPanel.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,9 +130,9 @@ namespace LogiMartPOSApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewCustomers.HideSelection = false;
-            this.listViewCustomers.Location = new System.Drawing.Point(20, 50);
+            this.listViewCustomers.Location = new System.Drawing.Point(20, 57);
             this.listViewCustomers.Name = "listViewCustomers";
-            this.listViewCustomers.Size = new System.Drawing.Size(1084, 650);
+            this.listViewCustomers.Size = new System.Drawing.Size(409, 650);
             this.listViewCustomers.TabIndex = 1;
             this.listViewCustomers.UseCompatibleStateImageBehavior = false;
             this.listViewCustomers.View = System.Windows.Forms.View.Details;
@@ -137,25 +153,189 @@ namespace LogiMartPOSApp
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(247)))), ((int)(((byte)(193)))));
-            this.mainPanel.Controls.Add(this.recentSalesPanel);
+            this.mainPanel.Controls.Add(this.panelDeleteCustomer);
+            this.mainPanel.Controls.Add(this.panelAddCustomer);
+            this.mainPanel.Controls.Add(this.customersPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(366, 100);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1234, 800);
             this.mainPanel.TabIndex = 3;
             // 
-            // recentSalesPanel
+            // panelDeleteCustomer
             // 
-            this.recentSalesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelDeleteCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDeleteCustomer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDeleteCustomer.Controls.Add(this.lblDeleteCustomer);
+            this.panelDeleteCustomer.Controls.Add(this.txtDeleteCustomerID);
+            this.panelDeleteCustomer.Controls.Add(this.btnDeleteCustomer);
+            this.panelDeleteCustomer.Controls.Add(this.lblDeleteCustomerID);
+            this.panelDeleteCustomer.Location = new System.Drawing.Point(528, 450);
+            this.panelDeleteCustomer.Name = "panelDeleteCustomer";
+            this.panelDeleteCustomer.Size = new System.Drawing.Size(656, 277);
+            this.panelDeleteCustomer.TabIndex = 6;
+            // 
+            // lblDeleteCustomer
+            // 
+            this.lblDeleteCustomer.AutoSize = true;
+            this.lblDeleteCustomer.Font = new System.Drawing.Font("Segoe UI Historic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteCustomer.Location = new System.Drawing.Point(118, 45);
+            this.lblDeleteCustomer.Name = "lblDeleteCustomer";
+            this.lblDeleteCustomer.Size = new System.Drawing.Size(405, 45);
+            this.lblDeleteCustomer.TabIndex = 5;
+            this.lblDeleteCustomer.Text = "Remove Customer Profile";
+            // 
+            // txtDeleteCustomerID
+            // 
+            this.txtDeleteCustomerID.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDeleteCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeleteCustomerID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeleteCustomerID.Location = new System.Drawing.Point(245, 120);
+            this.txtDeleteCustomerID.Name = "txtDeleteCustomerID";
+            this.txtDeleteCustomerID.Size = new System.Drawing.Size(350, 39);
+            this.txtDeleteCustomerID.TabIndex = 0;
+            // 
+            // btnDeleteCustomer
+            // 
+            this.btnDeleteCustomer.BackColor = System.Drawing.Color.Brown;
+            this.btnDeleteCustomer.CornerRadius = 20;
+            this.btnDeleteCustomer.FlatAppearance.BorderSize = 0;
+            this.btnDeleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(198, 197);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(242, 48);
+            this.btnDeleteCustomer.TabIndex = 3;
+            this.btnDeleteCustomer.Text = "Delete";
+            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
+            // 
+            // lblDeleteCustomerID
+            // 
+            this.lblDeleteCustomerID.AutoSize = true;
+            this.lblDeleteCustomerID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteCustomerID.Location = new System.Drawing.Point(46, 120);
+            this.lblDeleteCustomerID.Name = "lblDeleteCustomerID";
+            this.lblDeleteCustomerID.Size = new System.Drawing.Size(152, 32);
+            this.lblDeleteCustomerID.TabIndex = 0;
+            this.lblDeleteCustomerID.Text = "Customer ID:";
+            // 
+            // panelAddCustomer
+            // 
+            this.panelAddCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAddCustomer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelAddCustomer.Controls.Add(this.lblRegisterCustomer);
+            this.panelAddCustomer.Controls.Add(this.txtCustomerName);
+            this.panelAddCustomer.Controls.Add(this.txtAddress);
+            this.panelAddCustomer.Controls.Add(this.txtPhoneNumber);
+            this.panelAddCustomer.Controls.Add(this.btnAddCustomer);
+            this.panelAddCustomer.Controls.Add(this.lblCustomerName);
+            this.panelAddCustomer.Controls.Add(this.lblAddress);
+            this.panelAddCustomer.Controls.Add(this.lblPhoneNumber);
+            this.panelAddCustomer.Location = new System.Drawing.Point(528, 50);
+            this.panelAddCustomer.Name = "panelAddCustomer";
+            this.panelAddCustomer.Size = new System.Drawing.Size(656, 384);
+            this.panelAddCustomer.TabIndex = 0;
+            // 
+            // lblRegisterCustomer
+            // 
+            this.lblRegisterCustomer.AutoSize = true;
+            this.lblRegisterCustomer.Font = new System.Drawing.Font("Segoe UI Historic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegisterCustomer.Location = new System.Drawing.Point(176, 33);
+            this.lblRegisterCustomer.Name = "lblRegisterCustomer";
+            this.lblRegisterCustomer.Size = new System.Drawing.Size(300, 45);
+            this.lblRegisterCustomer.TabIndex = 5;
+            this.lblRegisterCustomer.Text = "Register Customer";
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.Location = new System.Drawing.Point(245, 104);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(350, 39);
+            this.txtCustomerName.TabIndex = 0;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(245, 172);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(350, 39);
+            this.txtAddress.TabIndex = 3;
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(245, 237);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(350, 39);
+            this.txtPhoneNumber.TabIndex = 2;
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnAddCustomer.CornerRadius = 20;
+            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddCustomer.Location = new System.Drawing.Point(198, 307);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(242, 48);
+            this.btnAddCustomer.TabIndex = 3;
+            this.btnAddCustomer.Text = "Add";
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // lblCustomerName
+            // 
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Location = new System.Drawing.Point(46, 108);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(193, 32);
+            this.lblCustomerName.TabIndex = 0;
+            this.lblCustomerName.Text = "Customer Name:";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(46, 175);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(103, 32);
+            this.lblAddress.TabIndex = 2;
+            this.lblAddress.Text = "Address:";
+            // 
+            // lblPhoneNumber
+            // 
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneNumber.Location = new System.Drawing.Point(46, 240);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(182, 32);
+            this.lblPhoneNumber.TabIndex = 4;
+            this.lblPhoneNumber.Text = "Phone Number:";
+            // 
+            // customersPanel
+            // 
+            this.customersPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.recentSalesPanel.BackColor = System.Drawing.Color.White;
-            this.recentSalesPanel.Controls.Add(this.listViewCustomers);
-            this.recentSalesPanel.Controls.Add(this.lblCustomersTitle);
-            this.recentSalesPanel.Location = new System.Drawing.Point(50, 50);
-            this.recentSalesPanel.Name = "recentSalesPanel";
-            this.recentSalesPanel.Size = new System.Drawing.Size(1134, 725);
-            this.recentSalesPanel.TabIndex = 0;
+            this.customersPanel.BackColor = System.Drawing.Color.White;
+            this.customersPanel.Controls.Add(this.listViewCustomers);
+            this.customersPanel.Controls.Add(this.lblCustomersTitle);
+            this.customersPanel.Location = new System.Drawing.Point(50, 50);
+            this.customersPanel.Name = "customersPanel";
+            this.customersPanel.Size = new System.Drawing.Size(459, 725);
+            this.customersPanel.TabIndex = 0;
             // 
             // lblCustomersTitle
             // 
@@ -171,8 +351,8 @@ namespace LogiMartPOSApp
             // panelSidebar
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelSidebar.Controls.Add(this.btnReports);
             this.panelSidebar.Controls.Add(this.btnNewSale);
+            this.panelSidebar.Controls.Add(this.btnReports);
             this.panelSidebar.Controls.Add(this.btnProducts);
             this.panelSidebar.Controls.Add(this.btnCustomers);
             this.panelSidebar.Controls.Add(this.btnSales);
@@ -200,21 +380,6 @@ namespace LogiMartPOSApp
             this.btnReports.TabIndex = 9;
             this.btnReports.Text = "      Reports";
             this.btnReports.UseVisualStyleBackColor = false;
-            // 
-            // btnNewSale
-            // 
-            this.btnNewSale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.btnNewSale.CornerRadius = 25;
-            this.btnNewSale.FlatAppearance.BorderSize = 0;
-            this.btnNewSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewSale.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewSale.ForeColor = System.Drawing.Color.White;
-            this.btnNewSale.Location = new System.Drawing.Point(71, 75);
-            this.btnNewSale.Name = "btnNewSale";
-            this.btnNewSale.Size = new System.Drawing.Size(215, 61);
-            this.btnNewSale.TabIndex = 8;
-            this.btnNewSale.Text = "New Sale";
-            this.btnNewSale.UseVisualStyleBackColor = false;
             // 
             // btnProducts
             // 
@@ -289,6 +454,21 @@ namespace LogiMartPOSApp
             this.btnDiscounts.Text = "          Discounts";
             this.btnDiscounts.UseVisualStyleBackColor = false;
             // 
+            // btnNewSale
+            // 
+            this.btnNewSale.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnNewSale.CornerRadius = 25;
+            this.btnNewSale.FlatAppearance.BorderSize = 0;
+            this.btnNewSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewSale.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewSale.ForeColor = System.Drawing.Color.White;
+            this.btnNewSale.Location = new System.Drawing.Point(42, 44);
+            this.btnNewSale.Name = "btnNewSale";
+            this.btnNewSale.Size = new System.Drawing.Size(289, 102);
+            this.btnNewSale.TabIndex = 8;
+            this.btnNewSale.Text = "New Sale";
+            this.btnNewSale.UseVisualStyleBackColor = false;
+            // 
             // ManageCustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -308,8 +488,12 @@ namespace LogiMartPOSApp
             this.panelTopBar.PerformLayout();
             this.panelBackground.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
-            this.recentSalesPanel.ResumeLayout(false);
-            this.recentSalesPanel.PerformLayout();
+            this.panelDeleteCustomer.ResumeLayout(false);
+            this.panelDeleteCustomer.PerformLayout();
+            this.panelAddCustomer.ResumeLayout(false);
+            this.panelAddCustomer.PerformLayout();
+            this.customersPanel.ResumeLayout(false);
+            this.customersPanel.PerformLayout();
             this.panelSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -324,14 +508,28 @@ namespace LogiMartPOSApp
         private ListView listViewCustomers;
         protected Panel panelBackground;
         private Panel mainPanel;
-        private Panel recentSalesPanel;
+        private Panel customersPanel;
         private Label lblCustomersTitle;
         private Panel panelSidebar;
         private RoundedButton btnReports;
-        private RoundedButton btnNewSale;
         private RoundedButton btnProducts;
         private RoundedButton btnCustomers;
         private RoundedButton btnSales;
         private RoundedButton btnDiscounts;
+        private Panel panelAddCustomer;
+        private TextBox txtCustomerName;
+        private RoundedButton btnAddCustomer;
+        private TextBox txtPhoneNumber;
+        private TextBox txtAddress;
+        private Label lblPhoneNumber;
+        private Label lblAddress;
+        private Label lblCustomerName;
+        private Label lblRegisterCustomer;
+        private Panel panelDeleteCustomer;
+        private Label lblDeleteCustomer;
+        private TextBox txtDeleteCustomerID;
+        private RoundedButton btnDeleteCustomer;
+        private Label lblDeleteCustomerID;
+        private RoundedButton btnNewSale;
     }
 }

@@ -272,6 +272,9 @@
     <EmbeddedResource Include="ManageCustomersForm.resx">
       <DependentUpon>ManageCustomersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageProductsForm.resx">
+      <DependentUpon>ManageProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

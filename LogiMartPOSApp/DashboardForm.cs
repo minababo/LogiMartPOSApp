@@ -193,7 +193,6 @@ namespace LogiMartPOSApp
             {
                 ManageSalesForm sales = new ManageSalesForm();
                 sales.Show();
-                this.Hide();
             }
         }
 
@@ -203,13 +202,23 @@ namespace LogiMartPOSApp
             {
                 ManageProductsForm products = new ManageProductsForm();
                 products.Show();
-                this.Hide();
             }
         }
 
-        private void btnNewSale_MouseEnter(object sender, EventArgs e)
+
+
+        private void btnReports_Click(object sender, EventArgs e)
         {
-            btnNewSale.BackColor = Color.FromArgb(115, 235, 106);
+            if (btnReports.Enabled)
+            {
+                ReportsForm reports = new ReportsForm();
+                reports.Show();
+            }
+        }
+
+        private void btnDiscounts_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnNewSale_Click(object sender, EventArgs e)
@@ -218,28 +227,7 @@ namespace LogiMartPOSApp
             {
                 NewSaleForm newsale = new NewSaleForm();
                 newsale.Show();
-                this.Hide();
             }
-        }
-            
-        private void btnNewSale_MouseLeave(object sender, EventArgs e)
-        {
-            btnNewSale.BackColor = Color.FromArgb(85, 200, 85);
-        }
-
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-            if (btnReports.Enabled)
-            {
-                ReportsForm reports = new ReportsForm();
-                reports.Show();
-                this.Hide();
-            }
-        }
-
-        private void btnDiscounts_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

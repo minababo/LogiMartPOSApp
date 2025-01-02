@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -80,6 +81,92 @@ namespace LogiMartPOSApp
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            string customerName = txtCustomerName.Text.Trim();
+            string address = txtAddress.Text.Trim();
+            string phoneNumber = txtPhoneNumber.Text.Trim();
+
+            if (string.IsNullOrEmpty(customerName) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(phoneNumber))
+            {
+                MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("AddCustomer", conn))
+                    {
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@CustomerName", customerName);
+                        cmd.Parameters.AddWithValue("@Address", address);
+                        cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    LoadCustomerDetails(conn);
+
+                    txtCustomerName.Clear();
+                    txtAddress.Clear();
+                    txtPhoneNumber.Clear();
+
+                    MessageBox.Show("Customer added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error adding customer: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDeleteCustomerID.Text))
+            {
+                MessageBox.Show("Please enter a valid Customer ID.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!int.TryParse(txtDeleteCustomerID.Text, out int customerID))
+            {
+                MessageBox.Show("Customer ID must be a valid number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("DeleteCustomer", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CustomerID", customerID);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        LoadCustomerDetails(conn);
+
+                        txtDeleteCustomerID.Clear();
+
+                        MessageBox.Show("Customer deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting customer: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

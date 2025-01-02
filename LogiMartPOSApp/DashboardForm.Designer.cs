@@ -33,8 +33,8 @@ namespace LogiMartPOSApp
         private void InitializeComponent()
         {
             this.panelSidebar = new System.Windows.Forms.Panel();
-            this.btnReports = new RoundedButton();
             this.btnNewSale = new RoundedButton();
+            this.btnReports = new RoundedButton();
             this.btnProducts = new RoundedButton();
             this.btnCustomers = new RoundedButton();
             this.btnSales = new RoundedButton();
@@ -65,8 +65,8 @@ namespace LogiMartPOSApp
             // panelSidebar
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelSidebar.Controls.Add(this.btnReports);
             this.panelSidebar.Controls.Add(this.btnNewSale);
+            this.panelSidebar.Controls.Add(this.btnReports);
             this.panelSidebar.Controls.Add(this.btnProducts);
             this.panelSidebar.Controls.Add(this.btnCustomers);
             this.panelSidebar.Controls.Add(this.btnSales);
@@ -76,6 +76,22 @@ namespace LogiMartPOSApp
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(366, 800);
             this.panelSidebar.TabIndex = 1;
+            // 
+            // btnNewSale
+            // 
+            this.btnNewSale.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnNewSale.CornerRadius = 25;
+            this.btnNewSale.FlatAppearance.BorderSize = 0;
+            this.btnNewSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewSale.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewSale.ForeColor = System.Drawing.Color.White;
+            this.btnNewSale.Location = new System.Drawing.Point(42, 44);
+            this.btnNewSale.Name = "btnNewSale";
+            this.btnNewSale.Size = new System.Drawing.Size(289, 102);
+            this.btnNewSale.TabIndex = 8;
+            this.btnNewSale.Text = "New Sale";
+            this.btnNewSale.UseVisualStyleBackColor = false;
+            this.btnNewSale.Click += new System.EventHandler(this.btnNewSale_Click);
             // 
             // btnReports
             // 
@@ -95,24 +111,6 @@ namespace LogiMartPOSApp
             this.btnReports.Text = "      Reports";
             this.btnReports.UseVisualStyleBackColor = false;
             this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
-            // 
-            // btnNewSale
-            // 
-            this.btnNewSale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.btnNewSale.CornerRadius = 25;
-            this.btnNewSale.FlatAppearance.BorderSize = 0;
-            this.btnNewSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewSale.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewSale.ForeColor = System.Drawing.Color.White;
-            this.btnNewSale.Location = new System.Drawing.Point(71, 75);
-            this.btnNewSale.Name = "btnNewSale";
-            this.btnNewSale.Size = new System.Drawing.Size(215, 61);
-            this.btnNewSale.TabIndex = 8;
-            this.btnNewSale.Text = "New Sale";
-            this.btnNewSale.UseVisualStyleBackColor = false;
-            this.btnNewSale.Click += new System.EventHandler(this.btnNewSale_Click);
-            this.btnNewSale.MouseEnter += new System.EventHandler(this.btnNewSale_MouseEnter);
-            this.btnNewSale.MouseLeave += new System.EventHandler(this.btnNewSale_MouseLeave);
             // 
             // btnProducts
             // 
@@ -399,7 +397,6 @@ namespace LogiMartPOSApp
         private RoundedButton btnSales;
         private RoundedButton btnDiscounts;
         private RoundedButton btnProducts;
-        private RoundedButton btnNewSale;
         private RoundedButton btnReports;
         private Label lblWelcome;
         private Label lblAnnouncementMessage;
@@ -410,5 +407,6 @@ namespace LogiMartPOSApp
         private Panel panel1;
         private Panel announcementPanel;
         private Panel recentSalesPanel;
+        private RoundedButton btnNewSale;
     }
 }
