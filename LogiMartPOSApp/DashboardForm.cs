@@ -218,7 +218,11 @@ namespace LogiMartPOSApp
 
         private void btnDiscounts_Click(object sender, EventArgs e)
         {
-
+            if (btnDiscounts.Enabled)
+            {
+                ManageDiscountsForm discounts = new ManageDiscountsForm();
+                discounts.Show();
+            }
         }
 
         private void btnNewSale_Click(object sender, EventArgs e)
@@ -228,6 +232,18 @@ namespace LogiMartPOSApp
                 NewSaleForm newsale = new NewSaleForm();
                 newsale.Show();
             }
+        }
+
+        private void btnStockPurchases_Click(object sender, EventArgs e)
+        {
+                ManagePurchasesForm purchases = new ManagePurchasesForm();
+                purchases.Show();
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+                ManageSuppliersForm suppliers = new ManageSuppliersForm();
+                suppliers.Show();
         }
     }
 }

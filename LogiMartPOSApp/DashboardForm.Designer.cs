@@ -33,6 +33,8 @@ namespace LogiMartPOSApp
         private void InitializeComponent()
         {
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.btnSuppliers = new RoundedButton();
+            this.btnStockPurchases = new RoundedButton();
             this.btnNewSale = new RoundedButton();
             this.btnReports = new RoundedButton();
             this.btnProducts = new RoundedButton();
@@ -65,6 +67,8 @@ namespace LogiMartPOSApp
             // panelSidebar
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelSidebar.Controls.Add(this.btnSuppliers);
+            this.panelSidebar.Controls.Add(this.btnStockPurchases);
             this.panelSidebar.Controls.Add(this.btnNewSale);
             this.panelSidebar.Controls.Add(this.btnReports);
             this.panelSidebar.Controls.Add(this.btnProducts);
@@ -77,15 +81,53 @@ namespace LogiMartPOSApp
             this.panelSidebar.Size = new System.Drawing.Size(366, 800);
             this.panelSidebar.TabIndex = 1;
             // 
+            // btnSuppliers
+            // 
+            this.btnSuppliers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSuppliers.CornerRadius = 20;
+            this.btnSuppliers.FlatAppearance.BorderSize = 0;
+            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuppliers.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuppliers.Image = global::LogiMartPOSApp.Properties.Resources.supplier;
+            this.btnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuppliers.Location = new System.Drawing.Point(42, 792);
+            this.btnSuppliers.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnSuppliers.Size = new System.Drawing.Size(274, 61);
+            this.btnSuppliers.TabIndex = 14;
+            this.btnSuppliers.Text = "        Suppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = false;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
+            // 
+            // btnStockPurchases
+            // 
+            this.btnStockPurchases.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStockPurchases.CornerRadius = 20;
+            this.btnStockPurchases.FlatAppearance.BorderSize = 0;
+            this.btnStockPurchases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockPurchases.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockPurchases.Image = global::LogiMartPOSApp.Properties.Resources.stockpurchase;
+            this.btnStockPurchases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockPurchases.Location = new System.Drawing.Point(42, 691);
+            this.btnStockPurchases.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnStockPurchases.Name = "btnStockPurchases";
+            this.btnStockPurchases.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnStockPurchases.Size = new System.Drawing.Size(274, 61);
+            this.btnStockPurchases.TabIndex = 13;
+            this.btnStockPurchases.Text = "         Purchases";
+            this.btnStockPurchases.UseVisualStyleBackColor = false;
+            this.btnStockPurchases.Click += new System.EventHandler(this.btnStockPurchases_Click);
+            // 
             // btnNewSale
             // 
-            this.btnNewSale.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnNewSale.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnNewSale.CornerRadius = 25;
             this.btnNewSale.FlatAppearance.BorderSize = 0;
             this.btnNewSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewSale.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewSale.ForeColor = System.Drawing.Color.White;
-            this.btnNewSale.Location = new System.Drawing.Point(42, 44);
+            this.btnNewSale.Location = new System.Drawing.Point(35, 44);
             this.btnNewSale.Name = "btnNewSale";
             this.btnNewSale.Size = new System.Drawing.Size(289, 102);
             this.btnNewSale.TabIndex = 8;
@@ -253,8 +295,7 @@ namespace LogiMartPOSApp
             // 
             // announcementPanel
             // 
-            this.announcementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.announcementPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.announcementPanel.AutoSize = true;
             this.announcementPanel.BackColor = System.Drawing.Color.White;
@@ -270,7 +311,7 @@ namespace LogiMartPOSApp
             this.lblAnnouncementMessage.AutoSize = true;
             this.lblAnnouncementMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnnouncementMessage.ForeColor = System.Drawing.Color.Black;
-            this.lblAnnouncementMessage.Location = new System.Drawing.Point(20, 50);
+            this.lblAnnouncementMessage.Location = new System.Drawing.Point(20, 56);
             this.lblAnnouncementMessage.Name = "lblAnnouncementMessage";
             this.lblAnnouncementMessage.Size = new System.Drawing.Size(610, 32);
             this.lblAnnouncementMessage.TabIndex = 0;
@@ -281,7 +322,7 @@ namespace LogiMartPOSApp
             this.lblAnnouncementTitle.AutoSize = true;
             this.lblAnnouncementTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnnouncementTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblAnnouncementTitle.Location = new System.Drawing.Point(20, 10);
+            this.lblAnnouncementTitle.Location = new System.Drawing.Point(20, 16);
             this.lblAnnouncementTitle.Name = "lblAnnouncementTitle";
             this.lblAnnouncementTitle.Size = new System.Drawing.Size(227, 38);
             this.lblAnnouncementTitle.TabIndex = 1;
@@ -408,5 +449,7 @@ namespace LogiMartPOSApp
         private Panel announcementPanel;
         private Panel recentSalesPanel;
         private RoundedButton btnNewSale;
+        private RoundedButton btnSuppliers;
+        private RoundedButton btnStockPurchases;
     }
 }

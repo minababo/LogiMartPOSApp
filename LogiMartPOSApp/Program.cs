@@ -16,7 +16,7 @@ namespace LogiMartPOSApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManageProductsForm());
+            Application.Run(new ManageSuppliersForm());
         }
     }
 }
