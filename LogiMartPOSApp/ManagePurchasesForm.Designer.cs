@@ -31,6 +31,11 @@
             this.panelBackground = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panelLogPurchase = new System.Windows.Forms.Panel();
+            this.lblPurchaseDate = new System.Windows.Forms.Label();
+            this.dtpPurchaseDate = new System.Windows.Forms.DateTimePicker();
+            this.txtPurchasePrice = new System.Windows.Forms.TextBox();
+            this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.cmbProduct = new System.Windows.Forms.ComboBox();
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblLogPurchase = new System.Windows.Forms.Label();
             this.txtQuantityPurchased = new System.Windows.Forms.TextBox();
@@ -39,8 +44,8 @@
             this.lblSupplier = new System.Windows.Forms.Label();
             this.lblQuantityPurchased = new System.Windows.Forms.Label();
             this.purchasesPanel = new System.Windows.Forms.Panel();
-            this.listViewPurchases = new System.Windows.Forms.ListView();
             this.lblPurchasesTitle = new System.Windows.Forms.Label();
+            this.listViewPurchases = new System.Windows.Forms.DataGridView();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnSuppliers = new RoundedButton();
             this.btnStockPurchases = new RoundedButton();
@@ -54,15 +59,11 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblLogo = new System.Windows.Forms.Label();
             this.btnLogout = new RoundedButton();
-            this.cmbProduct = new System.Windows.Forms.ComboBox();
-            this.cmbSupplier = new System.Windows.Forms.ComboBox();
-            this.txtPurchasePrice = new System.Windows.Forms.TextBox();
-            this.dtpPurchaseDate = new System.Windows.Forms.DateTimePicker();
-            this.lblPurchaseDate = new System.Windows.Forms.Label();
             this.panelBackground.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panelLogPurchase.SuspendLayout();
             this.purchasesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listViewPurchases)).BeginInit();
             this.panelSidebar.SuspendLayout();
             this.panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -112,6 +113,55 @@
             this.panelLogPurchase.Name = "panelLogPurchase";
             this.panelLogPurchase.Size = new System.Drawing.Size(656, 517);
             this.panelLogPurchase.TabIndex = 0;
+            // 
+            // lblPurchaseDate
+            // 
+            this.lblPurchaseDate.AutoSize = true;
+            this.lblPurchaseDate.Location = new System.Drawing.Point(46, 368);
+            this.lblPurchaseDate.Name = "lblPurchaseDate";
+            this.lblPurchaseDate.Size = new System.Drawing.Size(171, 32);
+            this.lblPurchaseDate.TabIndex = 19;
+            this.lblPurchaseDate.Text = "Purchase Date:";
+            // 
+            // dtpPurchaseDate
+            // 
+            this.dtpPurchaseDate.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPurchaseDate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpPurchaseDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPurchaseDate.Location = new System.Drawing.Point(245, 369);
+            this.dtpPurchaseDate.Name = "dtpPurchaseDate";
+            this.dtpPurchaseDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpPurchaseDate.Size = new System.Drawing.Size(350, 34);
+            this.dtpPurchaseDate.TabIndex = 18;
+            // 
+            // txtPurchasePrice
+            // 
+            this.txtPurchasePrice.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPurchasePrice.Location = new System.Drawing.Point(245, 303);
+            this.txtPurchasePrice.Name = "txtPurchasePrice";
+            this.txtPurchasePrice.Size = new System.Drawing.Size(350, 39);
+            this.txtPurchasePrice.TabIndex = 17;
+            // 
+            // cmbSupplier
+            // 
+            this.cmbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSupplier.DropDownWidth = 200;
+            this.cmbSupplier.FormattingEnabled = true;
+            this.cmbSupplier.Location = new System.Drawing.Point(245, 172);
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(350, 40);
+            this.cmbSupplier.TabIndex = 16;
+            // 
+            // cmbProduct
+            // 
+            this.cmbProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProduct.DropDownWidth = 200;
+            this.cmbProduct.FormattingEnabled = true;
+            this.cmbProduct.Location = new System.Drawing.Point(245, 104);
+            this.cmbProduct.Name = "cmbProduct";
+            this.cmbProduct.Size = new System.Drawing.Size(350, 40);
+            this.cmbProduct.TabIndex = 15;
             // 
             // lblCategory
             // 
@@ -193,26 +243,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.purchasesPanel.BackColor = System.Drawing.Color.White;
-            this.purchasesPanel.Controls.Add(this.listViewPurchases);
             this.purchasesPanel.Controls.Add(this.lblPurchasesTitle);
+            this.purchasesPanel.Controls.Add(this.listViewPurchases);
             this.purchasesPanel.Location = new System.Drawing.Point(50, 50);
             this.purchasesPanel.Name = "purchasesPanel";
             this.purchasesPanel.Size = new System.Drawing.Size(459, 725);
             this.purchasesPanel.TabIndex = 0;
-            // 
-            // listViewPurchases
-            // 
-            this.listViewPurchases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewPurchases.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewPurchases.HideSelection = false;
-            this.listViewPurchases.Location = new System.Drawing.Point(20, 57);
-            this.listViewPurchases.Name = "listViewPurchases";
-            this.listViewPurchases.Size = new System.Drawing.Size(409, 650);
-            this.listViewPurchases.TabIndex = 1;
-            this.listViewPurchases.UseCompatibleStateImageBehavior = false;
-            this.listViewPurchases.View = System.Windows.Forms.View.Details;
             // 
             // lblPurchasesTitle
             // 
@@ -224,6 +260,20 @@
             this.lblPurchasesTitle.Size = new System.Drawing.Size(154, 38);
             this.lblPurchasesTitle.TabIndex = 0;
             this.lblPurchasesTitle.Text = "Purchases:";
+            // 
+            // listViewPurchases
+            // 
+            this.listViewPurchases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewPurchases.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.listViewPurchases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listViewPurchases.Location = new System.Drawing.Point(20, 57);
+            this.listViewPurchases.Name = "listViewPurchases";
+            this.listViewPurchases.RowHeadersWidth = 62;
+            this.listViewPurchases.RowTemplate.Height = 28;
+            this.listViewPurchases.Size = new System.Drawing.Size(419, 650);
+            this.listViewPurchases.TabIndex = 2;
             // 
             // panelSidebar
             // 
@@ -435,55 +485,7 @@
             this.btnLogout.Size = new System.Drawing.Size(50, 50);
             this.btnLogout.TabIndex = 13;
             this.btnLogout.UseVisualStyleBackColor = false;
-            // 
-            // cmbProduct
-            // 
-            this.cmbProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProduct.DropDownWidth = 200;
-            this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(245, 104);
-            this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(350, 40);
-            this.cmbProduct.TabIndex = 15;
-            // 
-            // cmbSupplier
-            // 
-            this.cmbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSupplier.DropDownWidth = 200;
-            this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.Location = new System.Drawing.Point(245, 172);
-            this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(350, 40);
-            this.cmbSupplier.TabIndex = 16;
-            // 
-            // txtPurchasePrice
-            // 
-            this.txtPurchasePrice.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPurchasePrice.Location = new System.Drawing.Point(245, 303);
-            this.txtPurchasePrice.Name = "txtPurchasePrice";
-            this.txtPurchasePrice.Size = new System.Drawing.Size(350, 39);
-            this.txtPurchasePrice.TabIndex = 17;
-            // 
-            // dtpPurchaseDate
-            // 
-            this.dtpPurchaseDate.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpPurchaseDate.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpPurchaseDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpPurchaseDate.Location = new System.Drawing.Point(245, 369);
-            this.dtpPurchaseDate.Name = "dtpPurchaseDate";
-            this.dtpPurchaseDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpPurchaseDate.Size = new System.Drawing.Size(350, 34);
-            this.dtpPurchaseDate.TabIndex = 18;
-            // 
-            // lblPurchaseDate
-            // 
-            this.lblPurchaseDate.AutoSize = true;
-            this.lblPurchaseDate.Location = new System.Drawing.Point(46, 368);
-            this.lblPurchaseDate.Name = "lblPurchaseDate";
-            this.lblPurchaseDate.Size = new System.Drawing.Size(171, 32);
-            this.lblPurchaseDate.TabIndex = 19;
-            this.lblPurchaseDate.Text = "Purchase Date:";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // ManagePurchasesForm
             // 
@@ -503,6 +505,7 @@
             this.panelLogPurchase.PerformLayout();
             this.purchasesPanel.ResumeLayout(false);
             this.purchasesPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listViewPurchases)).EndInit();
             this.panelSidebar.ResumeLayout(false);
             this.panelTopBar.ResumeLayout(false);
             this.panelTopBar.PerformLayout();
@@ -524,7 +527,6 @@
         private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.Label lblQuantityPurchased;
         private System.Windows.Forms.Panel purchasesPanel;
-        private System.Windows.Forms.ListView listViewPurchases;
         private System.Windows.Forms.Label lblPurchasesTitle;
         private System.Windows.Forms.Panel panelSidebar;
         private RoundedButton btnSuppliers;
@@ -544,5 +546,6 @@
         private System.Windows.Forms.ComboBox cmbSupplier;
         private System.Windows.Forms.Label lblPurchaseDate;
         private System.Windows.Forms.DateTimePicker dtpPurchaseDate;
+        private System.Windows.Forms.DataGridView listViewPurchases;
     }
 }

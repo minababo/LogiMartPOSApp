@@ -42,25 +42,27 @@ namespace LogiMartPOSApp
         {
             try
             {
-                string query = @"
-            SELECT P.PermissionName
-            FROM ROLE_PERMISSION RP
-            INNER JOIN PERMISSION P ON RP.PermissionID = P.PermissionID
-            INNER JOIN [USER] U ON U.Us_RoleID = RP.RoleID
-            WHERE U.UserID = @UserID";
+                // Fetch permissions for the logged-in user
+                string query = "SELECT PermissionName FROM GetUserPermissions(@UserID)";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    // Pass the current user's ID to the query
                     cmd.Parameters.AddWithValue("@UserID", currentUserId);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
+                        // Initially disable all buttons
                         btnCustomers.Enabled = false;
                         btnProducts.Enabled = false;
                         btnSales.Enabled = false;
                         btnNewSale.Enabled = false;
                         btnReports.Enabled = false;
+                        btnStockPurchases.Enabled = false;
+                        btnSuppliers.Enabled = false;
+                        btnDiscounts.Enabled = false;
 
+                        // Enable buttons based on the user's permissions
                         while (reader.Read())
                         {
                             string permission = reader["PermissionName"].ToString();
@@ -68,17 +70,32 @@ namespace LogiMartPOSApp
                             switch (permission)
                             {
                                 case "Manage Products":
-                                    btnCustomers.Enabled = true;
                                     btnProducts.Enabled = true;
                                     break;
+
                                 case "View Sales":
                                     btnSales.Enabled = true;
                                     break;
+
                                 case "Generate Sales":
                                     btnNewSale.Enabled = true;
                                     break;
+
                                 case "Generate Reports":
                                     btnReports.Enabled = true;
+                                    break;
+
+                                case "Manage Users":
+                                    btnCustomers.Enabled = true;
+                                    break;
+
+                                case "Manage Stock":
+                                    btnStockPurchases.Enabled = true;
+                                    btnSuppliers.Enabled = true;
+                                    break;
+
+                                case "Manage Discounts":
+                                    btnDiscounts.Enabled = true; // Enable Discounts form access
                                     break;
                             }
                         }
@@ -90,6 +107,7 @@ namespace LogiMartPOSApp
                 MessageBox.Show("Error applying permissions: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void LoadWelcomeMessage(SqlConnection conn)

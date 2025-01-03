@@ -18,23 +18,65 @@ namespace LogiMartPOSApp
         public ManageProductsForm()
         {
             InitializeComponent();
-            InitializeListViewColumns();
+            ConfigureDataGridView();
             LoadDropdowns();
             LoadProducts();
         }
 
-        private void InitializeListViewColumns()
+        private void ConfigureDataGridView()
         {
-            listViewProducts.Clear();
-            listViewProducts.View = View.Details;
-            listViewProducts.FullRowSelect = true;
-            listViewProducts.Columns.Add("Product ID", 100, HorizontalAlignment.Left);
-            listViewProducts.Columns.Add("Product Name", 150, HorizontalAlignment.Left);
-            listViewProducts.Columns.Add("Description", 150, HorizontalAlignment.Left);
-            listViewProducts.Columns.Add("Unit Price", 100, HorizontalAlignment.Right);
-            listViewProducts.Columns.Add("Category", 100, HorizontalAlignment.Left);
-            listViewProducts.Columns.Add("Quantity", 100, HorizontalAlignment.Right);
-            listViewProducts.Columns.Add("Supplier", 200, HorizontalAlignment.Left);
+            listViewProducts.AutoGenerateColumns = false;
+            listViewProducts.RowHeadersWidth = 15;
+            listViewProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
+            listViewProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "ProductID",
+                DataPropertyName = "ProductID",
+                Width = 100,
+                ReadOnly = true
+            });
+            listViewProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Product Name",
+                DataPropertyName = "ProductName",
+                Width = 150
+            });
+            listViewProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Description",
+                DataPropertyName = "ProductDescription",
+                Width = 150
+            });
+            listViewProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Unit Price",
+                DataPropertyName = "UnitPrice",
+                Width = 100,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "C" }
+            });
+            listViewProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Category",
+                DataPropertyName = "Category",
+                Width = 100
+            });
+            listViewProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Quantity",
+                DataPropertyName = "QuantityInStock",
+                Width = 100
+            });
+            listViewProducts.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Supplier",
+                DataPropertyName = "Supplier",
+                Width = 200
+            });
+
+            listViewProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listViewProducts.MultiSelect = false;
+            listViewProducts.ReadOnly = true;
         }
 
         private void LoadProducts()
@@ -48,22 +90,12 @@ namespace LogiMartPOSApp
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
-                            listViewProducts.Items.Clear();
+                            DataTable productsTable = new DataTable();
+                            adapter.Fill(productsTable);
 
-                            while (reader.Read())
-                            {
-                                ListViewItem item = new ListViewItem(reader["ProductID"].ToString());
-                                item.SubItems.Add(reader["ProductName"].ToString());
-                                item.SubItems.Add(reader["ProductDescription"].ToString());
-                                item.SubItems.Add(Convert.ToDecimal(reader["UnitPrice"]).ToString("C"));
-                                item.SubItems.Add(reader["Category"].ToString());
-                                item.SubItems.Add(reader["QuantityInStock"].ToString());
-                                item.SubItems.Add(reader["Supplier"] != DBNull.Value ? reader["Supplier"].ToString() : "N/A");
-
-                                listViewProducts.Items.Add(item);
-                            }
+                            listViewProducts.DataSource = productsTable;
                         }
                     }
                 }
@@ -83,7 +115,6 @@ namespace LogiMartPOSApp
                 cmbCategory.DisplayMember = "CategoryName";
                 cmbCategory.ValueMember = "CategoryID";
                 cmbCategory.SelectedIndex = -1;
-
             }
             catch (Exception ex)
             {
@@ -111,7 +142,6 @@ namespace LogiMartPOSApp
 
             return categories;
         }
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();

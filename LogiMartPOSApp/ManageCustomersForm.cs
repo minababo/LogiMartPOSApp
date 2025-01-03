@@ -17,13 +17,13 @@ namespace LogiMartPOSApp
 
         private void InitializeListView()
         {
-            listViewCustomers.Columns.Clear();
-            listViewCustomers.Columns.Add("Customer ID", 100);
-            listViewCustomers.Columns.Add("Customer Name", 200);
-            listViewCustomers.Columns.Add("Address", 300);
-            listViewCustomers.Columns.Add("Phone Number", 150);
-            listViewCustomers.View = View.Details;
-            listViewCustomers.FullRowSelect = true;
+            listViewCustomers1.Columns.Clear();
+            listViewCustomers1.Columns.Add("Customer ID", 100);
+            listViewCustomers1.Columns.Add("Customer Name", 200);
+            listViewCustomers1.Columns.Add("Address", 300);
+            listViewCustomers1.Columns.Add("Phone Number", 150);
+            listViewCustomers1.View = View.Details;
+            listViewCustomers1.FullRowSelect = true;
         }
 
         private void ManageCustomersForm_Load(object sender, EventArgs e)
@@ -46,29 +46,20 @@ namespace LogiMartPOSApp
         {
             try
             {
-                string query = @"
-                SELECT C.CustomerID, 
-                       C.CustomerName, 
-                       C.Address, 
-                       CP.PhoneNumber
-                FROM CUSTOMER C
-                LEFT JOIN CUSTOMER_PHONE CP ON C.CustomerID = CP.CustomerID";
+                string query = "SELECT * FROM vw_CustomerDetails";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
-                        listViewCustomers.Items.Clear();
-
-                        while (reader.Read())
-                        {
-                            ListViewItem item = new ListViewItem(reader["CustomerID"].ToString());
-                            item.SubItems.Add(reader["CustomerName"].ToString());
-                            item.SubItems.Add(reader["Address"].ToString());
-                            item.SubItems.Add(reader["PhoneNumber"] != DBNull.Value ? reader["PhoneNumber"].ToString() : "N/A");
-
-                            listViewCustomers.Items.Add(item);
-                        }
+                        DataTable customers = new DataTable();
+                        adapter.Fill(customers);
+                        listViewCustomers.DataSource = customers;
+                        listViewCustomers.RowHeadersWidth = 15;
+                        listViewCustomers.Columns[0].Width = 100;
+                        listViewCustomers.Columns[1].Width = 200;
+                        listViewCustomers.Columns[2].Width = 400;
+                        listViewCustomers.Columns[3].Width = 200;
                     }
                 }
             }
@@ -77,6 +68,7 @@ namespace LogiMartPOSApp
                 MessageBox.Show($"Error loading customer details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {

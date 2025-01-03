@@ -14,7 +14,6 @@ namespace LogiMartPOSApp
             InitializeComponent();
             LoadPurchases();
             LoadDropdowns();
-            ConfigureListView();
         }
 
         private void LoadPurchases()
@@ -28,23 +27,23 @@ namespace LogiMartPOSApp
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
-                            listViewPurchases.Items.Clear();
-
-                            while (reader.Read())
-                            {
-                                ListViewItem item = new ListViewItem(reader["PurchaseID"].ToString());
-                                item.SubItems.Add(reader["ProductName"].ToString());
-                                item.SubItems.Add(reader["Supplier"].ToString());
-                                item.SubItems.Add(reader["QuantityPurchased"].ToString());
-                                item.SubItems.Add(Convert.ToDecimal(reader["PurchasePrice"]).ToString("C"));
-                                item.SubItems.Add(Convert.ToDateTime(reader["PurchaseDate"]).ToShortDateString());
-
-                                listViewPurchases.Items.Add(item);
-                            }
+                            DataTable purchases = new DataTable();
+                            adapter.Fill(purchases);
+                            listViewPurchases.DataSource = purchases;
                         }
                     }
+                }
+                listViewPurchases.RowHeadersWidth = 15;
+                if (listViewPurchases.Columns.Count > 0)
+                {
+                    listViewPurchases.Columns[0].Width = 100;
+                    listViewPurchases.Columns[1].Width = 150;
+                    listViewPurchases.Columns[2].Width = 200;
+                    listViewPurchases.Columns[3].Width = 150;
+                    listViewPurchases.Columns[4].Width = 150;
+                    listViewPurchases.Columns[5].Width = 200;
                 }
             }
             catch (Exception ex)
@@ -140,22 +139,6 @@ namespace LogiMartPOSApp
             }
         }
 
-        private void ConfigureListView()
-        {
-            listViewPurchases.View = View.Details;
-            listViewPurchases.FullRowSelect = true;
-            listViewPurchases.GridLines = true;
-
-            listViewPurchases.Columns.Clear();
-
-            listViewPurchases.Columns.Add("Purchase ID", 0, HorizontalAlignment.Left);
-            listViewPurchases.Columns.Add("Product Name", 200, HorizontalAlignment.Left);
-            listViewPurchases.Columns.Add("Supplier", 200, HorizontalAlignment.Left);
-            listViewPurchases.Columns.Add("Quantity", 200, HorizontalAlignment.Right);
-            listViewPurchases.Columns.Add("Price", 190, HorizontalAlignment.Right);
-            listViewPurchases.Columns.Add("Date", 120, HorizontalAlignment.Center);
-        }
-
         private void btnAddPurchase_Click(object sender, EventArgs e)
         {
             try
@@ -216,6 +199,11 @@ namespace LogiMartPOSApp
             {
                 MessageBox.Show($"Error adding purchase: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

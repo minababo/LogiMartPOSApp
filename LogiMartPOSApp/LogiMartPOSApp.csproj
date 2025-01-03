@@ -236,12 +236,6 @@
     <Compile Include="ManageSalesForm.Designer.cs">
       <DependentUpon>ManageSalesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageStockForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageStockForm.Designer.cs">
-      <DependentUpon>ManageStockForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Discount.cs" />
@@ -290,11 +284,17 @@
     <EmbeddedResource Include="ManageCustomersForm.resx">
       <DependentUpon>ManageCustomersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageDiscountsForm.resx">
+      <DependentUpon>ManageDiscountsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageProductsForm.resx">
       <DependentUpon>ManageProductsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagePurchasesForm.resx">
       <DependentUpon>ManagePurchasesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageSuppliersForm.resx">
+      <DependentUpon>ManageSuppliersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

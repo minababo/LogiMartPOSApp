@@ -32,7 +32,7 @@ namespace LogiMartPOSApp
         {
             this.lblProductsTitle = new System.Windows.Forms.Label();
             this.productsPanel = new System.Windows.Forms.Panel();
-            this.listViewProducts = new System.Windows.Forms.ListView();
+            this.listViewProducts = new System.Windows.Forms.DataGridView();
             this.lblNewProduct = new System.Windows.Forms.Label();
             this.panelAddProduct = new System.Windows.Forms.Panel();
             this.lblCategory = new System.Windows.Forms.Label();
@@ -51,15 +51,16 @@ namespace LogiMartPOSApp
             this.btnLogout = new RoundedButton();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.btnSuppliers = new RoundedButton();
+            this.btnStockPurchases = new RoundedButton();
             this.btnReports = new RoundedButton();
             this.btnNewSale = new RoundedButton();
             this.btnProducts = new RoundedButton();
             this.btnCustomers = new RoundedButton();
             this.btnSales = new RoundedButton();
             this.btnDiscounts = new RoundedButton();
-            this.btnSuppliers = new RoundedButton();
-            this.btnStockPurchases = new RoundedButton();
             this.productsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listViewProducts)).BeginInit();
             this.panelAddProduct.SuspendLayout();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -85,8 +86,8 @@ namespace LogiMartPOSApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.productsPanel.BackColor = System.Drawing.Color.White;
-            this.productsPanel.Controls.Add(this.listViewProducts);
             this.productsPanel.Controls.Add(this.lblProductsTitle);
+            this.productsPanel.Controls.Add(this.listViewProducts);
             this.productsPanel.Location = new System.Drawing.Point(50, 50);
             this.productsPanel.Name = "productsPanel";
             this.productsPanel.Size = new System.Drawing.Size(459, 725);
@@ -97,14 +98,14 @@ namespace LogiMartPOSApp
             this.listViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewProducts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewProducts.HideSelection = false;
+            this.listViewProducts.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.listViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listViewProducts.Location = new System.Drawing.Point(20, 57);
             this.listViewProducts.Name = "listViewProducts";
-            this.listViewProducts.Size = new System.Drawing.Size(409, 650);
-            this.listViewProducts.TabIndex = 1;
-            this.listViewProducts.UseCompatibleStateImageBehavior = false;
-            this.listViewProducts.View = System.Windows.Forms.View.Details;
+            this.listViewProducts.RowHeadersWidth = 62;
+            this.listViewProducts.RowTemplate.Height = 28;
+            this.listViewProducts.Size = new System.Drawing.Size(419, 650);
+            this.listViewProducts.TabIndex = 2;
             // 
             // lblNewProduct
             // 
@@ -321,6 +322,42 @@ namespace LogiMartPOSApp
             this.panelSidebar.Size = new System.Drawing.Size(366, 800);
             this.panelSidebar.TabIndex = 1;
             // 
+            // btnSuppliers
+            // 
+            this.btnSuppliers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSuppliers.CornerRadius = 20;
+            this.btnSuppliers.FlatAppearance.BorderSize = 0;
+            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuppliers.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuppliers.Image = global::LogiMartPOSApp.Properties.Resources.supplier;
+            this.btnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuppliers.Location = new System.Drawing.Point(42, 792);
+            this.btnSuppliers.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnSuppliers.Size = new System.Drawing.Size(274, 61);
+            this.btnSuppliers.TabIndex = 16;
+            this.btnSuppliers.Text = "        Suppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = false;
+            // 
+            // btnStockPurchases
+            // 
+            this.btnStockPurchases.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStockPurchases.CornerRadius = 20;
+            this.btnStockPurchases.FlatAppearance.BorderSize = 0;
+            this.btnStockPurchases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockPurchases.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockPurchases.Image = global::LogiMartPOSApp.Properties.Resources.stockpurchase;
+            this.btnStockPurchases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockPurchases.Location = new System.Drawing.Point(42, 691);
+            this.btnStockPurchases.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnStockPurchases.Name = "btnStockPurchases";
+            this.btnStockPurchases.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnStockPurchases.Size = new System.Drawing.Size(274, 61);
+            this.btnStockPurchases.TabIndex = 15;
+            this.btnStockPurchases.Text = "         Purchases";
+            this.btnStockPurchases.UseVisualStyleBackColor = false;
+            // 
             // btnReports
             // 
             this.btnReports.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -427,42 +464,6 @@ namespace LogiMartPOSApp
             this.btnDiscounts.Text = "          Discounts";
             this.btnDiscounts.UseVisualStyleBackColor = false;
             // 
-            // btnSuppliers
-            // 
-            this.btnSuppliers.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSuppliers.CornerRadius = 20;
-            this.btnSuppliers.FlatAppearance.BorderSize = 0;
-            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuppliers.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuppliers.Image = global::LogiMartPOSApp.Properties.Resources.supplier;
-            this.btnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuppliers.Location = new System.Drawing.Point(42, 792);
-            this.btnSuppliers.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.btnSuppliers.Name = "btnSuppliers";
-            this.btnSuppliers.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnSuppliers.Size = new System.Drawing.Size(274, 61);
-            this.btnSuppliers.TabIndex = 16;
-            this.btnSuppliers.Text = "        Suppliers";
-            this.btnSuppliers.UseVisualStyleBackColor = false;
-            // 
-            // btnStockPurchases
-            // 
-            this.btnStockPurchases.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStockPurchases.CornerRadius = 20;
-            this.btnStockPurchases.FlatAppearance.BorderSize = 0;
-            this.btnStockPurchases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockPurchases.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockPurchases.Image = global::LogiMartPOSApp.Properties.Resources.stockpurchase;
-            this.btnStockPurchases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockPurchases.Location = new System.Drawing.Point(42, 691);
-            this.btnStockPurchases.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.btnStockPurchases.Name = "btnStockPurchases";
-            this.btnStockPurchases.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnStockPurchases.Size = new System.Drawing.Size(274, 61);
-            this.btnStockPurchases.TabIndex = 15;
-            this.btnStockPurchases.Text = "         Purchases";
-            this.btnStockPurchases.UseVisualStyleBackColor = false;
-            // 
             // ManageProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -476,6 +477,7 @@ namespace LogiMartPOSApp
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.productsPanel.ResumeLayout(false);
             this.productsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listViewProducts)).EndInit();
             this.panelAddProduct.ResumeLayout(false);
             this.panelAddProduct.PerformLayout();
             this.mainPanel.ResumeLayout(false);
@@ -491,7 +493,6 @@ namespace LogiMartPOSApp
         #endregion
         private System.Windows.Forms.Label lblProductsTitle;
         private System.Windows.Forms.Panel productsPanel;
-        private System.Windows.Forms.ListView listViewProducts;
         private System.Windows.Forms.Label lblNewProduct;
         private System.Windows.Forms.Panel panelAddProduct;
         private System.Windows.Forms.TextBox txtProductName;
@@ -518,5 +519,6 @@ namespace LogiMartPOSApp
         private RoundedButton btnDiscounts;
         private RoundedButton btnSuppliers;
         private RoundedButton btnStockPurchases;
+        private DataGridView listViewProducts;
     }
 }
