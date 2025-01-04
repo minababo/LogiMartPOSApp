@@ -27,9 +27,6 @@ namespace LogiMartPOSApp
             gridCart.CellContentClick += gridCart_CellContentClick;
             gridCart.CellEndEdit += gridCart_CellEndEdit;
 
-            LoadCustomers();
-            cmbCustomer.SelectedIndexChanged += cmbCustomer_SelectedIndexChanged;
-
             string cashierName = GetCashierName(currentUserId);
             CurrentInvoiceId = CreateNewInvoice(cashierName, "Customer1", currentUserId, 1, 1);
             if (CurrentInvoiceId == -1)
@@ -151,75 +148,6 @@ namespace LogiMartPOSApp
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading products: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void LoadCustomers()
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT CustomerID, CustomerName FROM CUSTOMER ORDER BY CustomerName";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            cmbCustomer.Items.Clear();
-                            Dictionary<int, string> customers = new Dictionary<int, string>();
-
-                            while (reader.Read())
-                            {
-                                int customerId = Convert.ToInt32(reader["CustomerID"]);
-                                string customerName = reader["CustomerName"].ToString();
-
-                                customers.Add(customerId, customerName);
-                                cmbCustomer.Items.Add(customerName);
-                            }
-
-                            cmbCustomer.Tag = customers;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading customers: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbCustomer.SelectedItem != null && cmbCustomer.Tag != null)
-            {
-                var customers = (Dictionary<int, string>)cmbCustomer.Tag;
-                string selectedCustomerName = cmbCustomer.SelectedItem.ToString();
-
-                int selectedCustomerId = customers.FirstOrDefault(c => c.Value == selectedCustomerName).Key;
-
-                try
-                {
-                    using (SqlConnection conn = new SqlConnection(connectionString))
-                    {
-                        conn.Open();
-                        string query = "UPDATE INVOICE SET Inv_CustomerID = @CustomerID WHERE InvoiceID = @InvoiceID";
-
-                        using (SqlCommand cmd = new SqlCommand(query, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@CustomerID", selectedCustomerId);
-                            cmd.Parameters.AddWithValue("@InvoiceID", CurrentInvoiceId);
-
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                    RefreshInvoiceTotals();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error updating customer: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
         }
 
@@ -546,7 +474,7 @@ namespace LogiMartPOSApp
 
                         int result = (int)returnValue.Value;
 
-                        if (result == 0) // Success
+                        if (result == 0)
                         {
                             MessageBox.Show("Order has been successfully placed!", "Order Finalized", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
@@ -595,6 +523,119 @@ namespace LogiMartPOSApp
             catch (Exception ex)
             {
                 MessageBox.Show($"Error canceling order: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLinkCustomer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string phoneNumber = txtCustomerPhone.Text.Trim();
+                if (string.IsNullOrEmpty(phoneNumber))
+                {
+                    MessageBox.Show("Please enter a valid phone number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int customerId = GetCustomerIdByPhone(phoneNumber);
+
+                if (customerId == -1)
+                {
+                    MessageBox.Show("No customer found for the provided phone number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                LinkCustomerToInvoice(customerId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error linking customer: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private int GetCustomerIdByPhone(string phoneNumber)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"
+            SELECT CP.CustomerID
+            FROM CUSTOMER_PHONE CP
+            WHERE CP.PhoneNumber = @PhoneNumber";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                        object result = cmd.ExecuteScalar();
+                        return result != null ? Convert.ToInt32(result) : -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error retrieving customer ID by phone: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+        }
+
+        private void LinkCustomerToInvoice(int customerId)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string customerName = GetCustomerNameById(conn, customerId);
+
+                    if (string.IsNullOrEmpty(customerName))
+                    {
+                        lblGreeting.Text = "Customer not found.";
+                        return;
+                    }
+
+                    string updateInvoiceQuery = @"
+            UPDATE INVOICE
+            SET Inv_CustomerID = @CustomerID
+            WHERE InvoiceID = @InvoiceID";
+
+                    using (SqlCommand cmd = new SqlCommand(updateInvoiceQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CustomerID", customerId);
+                        cmd.Parameters.AddWithValue("@InvoiceID", CurrentInvoiceId);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    lblGreeting.Text = $"Hello, {customerName}!";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error linking customer to invoice: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string GetCustomerNameById(SqlConnection conn, int customerId)
+        {
+            try
+            {
+                string query = @"
+        SELECT CustomerName
+        FROM CUSTOMER
+        WHERE CustomerID = @CustomerID";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@CustomerID", customerId);
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? result.ToString() : null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error retrieving customer name: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
         }
     }

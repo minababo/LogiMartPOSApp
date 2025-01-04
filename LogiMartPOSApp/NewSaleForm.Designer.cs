@@ -43,8 +43,9 @@
             this.btnDiscounts = new RoundedButton();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.panelUpdateDiscount = new System.Windows.Forms.Panel();
-            this.cmbCustomer = new System.Windows.Forms.ComboBox();
-            this.lblCustomer = new System.Windows.Forms.Label();
+            this.txtCustomerPhone = new System.Windows.Forms.TextBox();
+            this.btnLinkCustomer = new System.Windows.Forms.Button();
+            this.lblGreeting = new System.Windows.Forms.Label();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panelBilling = new System.Windows.Forms.Panel();
@@ -306,30 +307,42 @@
             // 
             this.panelUpdateDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelUpdateDiscount.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelUpdateDiscount.Controls.Add(this.cmbCustomer);
-            this.panelUpdateDiscount.Controls.Add(this.lblCustomer);
+            this.panelUpdateDiscount.Controls.Add(this.txtCustomerPhone);
+            this.panelUpdateDiscount.Controls.Add(this.btnLinkCustomer);
+            this.panelUpdateDiscount.Controls.Add(this.lblGreeting);
             this.panelUpdateDiscount.Location = new System.Drawing.Point(1123, 50);
             this.panelUpdateDiscount.Name = "panelUpdateDiscount";
             this.panelUpdateDiscount.Size = new System.Drawing.Size(1021, 489);
             this.panelUpdateDiscount.TabIndex = 0;
             // 
-            // cmbCustomer
+            // txtCustomerPhone
             // 
-            this.cmbCustomer.FormattingEnabled = true;
-            this.cmbCustomer.Location = new System.Drawing.Point(242, 178);
-            this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(325, 40);
-            this.cmbCustomer.TabIndex = 3;
+            this.txtCustomerPhone.Location = new System.Drawing.Point(293, 96);
+            this.txtCustomerPhone.Name = "txtCustomerPhone";
+            this.txtCustomerPhone.Size = new System.Drawing.Size(325, 39);
+            this.txtCustomerPhone.TabIndex = 5;
             // 
-            // lblCustomer
+            // btnLinkCustomer
             // 
-            this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(46, 175);
-            this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(117, 32);
-            this.lblCustomer.TabIndex = 2;
-            this.lblCustomer.Text = "Customer";
+            this.btnLinkCustomer.FlatAppearance.BorderSize = 0;
+            this.btnLinkCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkCustomer.Location = new System.Drawing.Point(90, 85);
+            this.btnLinkCustomer.Name = "btnLinkCustomer";
+            this.btnLinkCustomer.Size = new System.Drawing.Size(197, 60);
+            this.btnLinkCustomer.TabIndex = 4;
+            this.btnLinkCustomer.Text = "Customer :";
+            this.btnLinkCustomer.UseVisualStyleBackColor = true;
+            this.btnLinkCustomer.Click += new System.EventHandler(this.btnLinkCustomer_Click);
+            // 
+            // lblGreeting
+            // 
+            this.lblGreeting.AutoSize = true;
+            this.lblGreeting.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreeting.Location = new System.Drawing.Point(124, 206);
+            this.lblGreeting.Name = "lblGreeting";
+            this.lblGreeting.Size = new System.Drawing.Size(188, 70);
+            this.lblGreeting.TabIndex = 2;
+            this.lblGreeting.Text = "Hello, ";
             // 
             // panelBackground
             // 
@@ -729,7 +742,8 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblDiscount;
         private RoundedButton btnPlaceOrder;
-        private System.Windows.Forms.ComboBox cmbCustomer;
-        private System.Windows.Forms.Label lblCustomer;
+        private System.Windows.Forms.Label lblGreeting;
+        private System.Windows.Forms.TextBox txtCustomerPhone;
+        private System.Windows.Forms.Button btnLinkCustomer;
     }
 }

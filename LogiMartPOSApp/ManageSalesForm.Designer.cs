@@ -30,20 +30,9 @@
         {
             this.panelBackground = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.panelUpdateDiscount = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nudDiscountRate = new System.Windows.Forms.NumericUpDown();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.lblUpdateDiscount = new System.Windows.Forms.Label();
-            this.btnUpdateDiscount = new RoundedButton();
-            this.lblDiscountRate = new System.Windows.Forms.Label();
-            this.lblStartDate = new System.Windows.Forms.Label();
-            this.lblEndDate = new System.Windows.Forms.Label();
-            this.DiscountsPanel = new System.Windows.Forms.Panel();
+            this.SalesPanel = new System.Windows.Forms.Panel();
+            this.listViewRecentSales = new System.Windows.Forms.ListView();
             this.lblSalesTitle = new System.Windows.Forms.Label();
-            this.listViewDiscounts = new System.Windows.Forms.DataGridView();
-            this.listViewCustomers1 = new System.Windows.Forms.ListView();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnSuppliers = new RoundedButton();
             this.btnStockPurchases = new RoundedButton();
@@ -59,10 +48,7 @@
             this.btnLogout = new RoundedButton();
             this.panelBackground.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            this.panelUpdateDiscount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDiscountRate)).BeginInit();
-            this.DiscountsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listViewDiscounts)).BeginInit();
+            this.SalesPanel.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             this.panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -84,139 +70,38 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(247)))), ((int)(((byte)(193)))));
-            this.mainPanel.Controls.Add(this.panelUpdateDiscount);
-            this.mainPanel.Controls.Add(this.DiscountsPanel);
+            this.mainPanel.Controls.Add(this.SalesPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(366, 100);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1234, 800);
             this.mainPanel.TabIndex = 3;
             // 
-            // panelUpdateDiscount
+            // SalesPanel
             // 
-            this.panelUpdateDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelUpdateDiscount.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelUpdateDiscount.Controls.Add(this.label1);
-            this.panelUpdateDiscount.Controls.Add(this.nudDiscountRate);
-            this.panelUpdateDiscount.Controls.Add(this.dtpEndDate);
-            this.panelUpdateDiscount.Controls.Add(this.dtpStartDate);
-            this.panelUpdateDiscount.Controls.Add(this.lblUpdateDiscount);
-            this.panelUpdateDiscount.Controls.Add(this.btnUpdateDiscount);
-            this.panelUpdateDiscount.Controls.Add(this.lblDiscountRate);
-            this.panelUpdateDiscount.Controls.Add(this.lblStartDate);
-            this.panelUpdateDiscount.Controls.Add(this.lblEndDate);
-            this.panelUpdateDiscount.Location = new System.Drawing.Point(528, 50);
-            this.panelUpdateDiscount.Name = "panelUpdateDiscount";
-            this.panelUpdateDiscount.Size = new System.Drawing.Size(656, 384);
-            this.panelUpdateDiscount.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(339, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 32);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "(%)";
-            // 
-            // nudDiscountRate
-            // 
-            this.nudDiscountRate.Location = new System.Drawing.Point(245, 104);
-            this.nudDiscountRate.Name = "nudDiscountRate";
-            this.nudDiscountRate.Size = new System.Drawing.Size(88, 39);
-            this.nudDiscountRate.TabIndex = 21;
-            // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEndDate.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpEndDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEndDate.Location = new System.Drawing.Point(245, 237);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpEndDate.Size = new System.Drawing.Size(350, 34);
-            this.dtpEndDate.TabIndex = 20;
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStartDate.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpStartDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStartDate.Location = new System.Drawing.Point(245, 172);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpStartDate.Size = new System.Drawing.Size(350, 34);
-            this.dtpStartDate.TabIndex = 19;
-            // 
-            // lblUpdateDiscount
-            // 
-            this.lblUpdateDiscount.AutoSize = true;
-            this.lblUpdateDiscount.Font = new System.Drawing.Font("Segoe UI Historic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateDiscount.Location = new System.Drawing.Point(176, 33);
-            this.lblUpdateDiscount.Name = "lblUpdateDiscount";
-            this.lblUpdateDiscount.Size = new System.Drawing.Size(273, 45);
-            this.lblUpdateDiscount.TabIndex = 5;
-            this.lblUpdateDiscount.Text = "Update Discount";
-            // 
-            // btnUpdateDiscount
-            // 
-            this.btnUpdateDiscount.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnUpdateDiscount.CornerRadius = 20;
-            this.btnUpdateDiscount.FlatAppearance.BorderSize = 0;
-            this.btnUpdateDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateDiscount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateDiscount.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdateDiscount.Location = new System.Drawing.Point(198, 307);
-            this.btnUpdateDiscount.Name = "btnUpdateDiscount";
-            this.btnUpdateDiscount.Size = new System.Drawing.Size(242, 48);
-            this.btnUpdateDiscount.TabIndex = 3;
-            this.btnUpdateDiscount.Text = "Update";
-            this.btnUpdateDiscount.UseVisualStyleBackColor = false;
-            // 
-            // lblDiscountRate
-            // 
-            this.lblDiscountRate.AutoSize = true;
-            this.lblDiscountRate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscountRate.Location = new System.Drawing.Point(46, 106);
-            this.lblDiscountRate.Name = "lblDiscountRate";
-            this.lblDiscountRate.Size = new System.Drawing.Size(167, 32);
-            this.lblDiscountRate.TabIndex = 0;
-            this.lblDiscountRate.Text = "Discount Rate:";
-            // 
-            // lblStartDate
-            // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDate.Location = new System.Drawing.Point(46, 175);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(124, 32);
-            this.lblStartDate.TabIndex = 2;
-            this.lblStartDate.Text = "Start Date:";
-            // 
-            // lblEndDate
-            // 
-            this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDate.Location = new System.Drawing.Point(46, 240);
-            this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(116, 32);
-            this.lblEndDate.TabIndex = 4;
-            this.lblEndDate.Text = "End Date:";
-            // 
-            // DiscountsPanel
-            // 
-            this.DiscountsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SalesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DiscountsPanel.BackColor = System.Drawing.Color.White;
-            this.DiscountsPanel.Controls.Add(this.lblSalesTitle);
-            this.DiscountsPanel.Controls.Add(this.listViewDiscounts);
-            this.DiscountsPanel.Controls.Add(this.listViewCustomers1);
-            this.DiscountsPanel.Location = new System.Drawing.Point(50, 50);
-            this.DiscountsPanel.Name = "DiscountsPanel";
-            this.DiscountsPanel.Size = new System.Drawing.Size(459, 725);
-            this.DiscountsPanel.TabIndex = 0;
+            this.SalesPanel.BackColor = System.Drawing.Color.White;
+            this.SalesPanel.Controls.Add(this.listViewRecentSales);
+            this.SalesPanel.Controls.Add(this.lblSalesTitle);
+            this.SalesPanel.Location = new System.Drawing.Point(50, 50);
+            this.SalesPanel.Name = "SalesPanel";
+            this.SalesPanel.Size = new System.Drawing.Size(1145, 725);
+            this.SalesPanel.TabIndex = 0;
+            // 
+            // listViewRecentSales
+            // 
+            this.listViewRecentSales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewRecentSales.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewRecentSales.HideSelection = false;
+            this.listViewRecentSales.Location = new System.Drawing.Point(30, 59);
+            this.listViewRecentSales.Name = "listViewRecentSales";
+            this.listViewRecentSales.Size = new System.Drawing.Size(1084, 632);
+            this.listViewRecentSales.TabIndex = 2;
+            this.listViewRecentSales.UseCompatibleStateImageBehavior = false;
+            this.listViewRecentSales.View = System.Windows.Forms.View.Details;
             // 
             // lblSalesTitle
             // 
@@ -228,34 +113,6 @@
             this.lblSalesTitle.Size = new System.Drawing.Size(91, 38);
             this.lblSalesTitle.TabIndex = 0;
             this.lblSalesTitle.Text = "Sales:";
-            // 
-            // listViewDiscounts
-            // 
-            this.listViewDiscounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewDiscounts.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.listViewDiscounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listViewDiscounts.Location = new System.Drawing.Point(20, 57);
-            this.listViewDiscounts.Name = "listViewDiscounts";
-            this.listViewDiscounts.RowHeadersWidth = 30;
-            this.listViewDiscounts.RowTemplate.Height = 28;
-            this.listViewDiscounts.Size = new System.Drawing.Size(419, 650);
-            this.listViewDiscounts.TabIndex = 3;
-            // 
-            // listViewCustomers1
-            // 
-            this.listViewCustomers1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewCustomers1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewCustomers1.HideSelection = false;
-            this.listViewCustomers1.Location = new System.Drawing.Point(20, 57);
-            this.listViewCustomers1.Name = "listViewCustomers1";
-            this.listViewCustomers1.Size = new System.Drawing.Size(409, 650);
-            this.listViewCustomers1.TabIndex = 1;
-            this.listViewCustomers1.UseCompatibleStateImageBehavior = false;
-            this.listViewCustomers1.View = System.Windows.Forms.View.Details;
             // 
             // panelSidebar
             // 
@@ -467,6 +324,7 @@
             this.btnLogout.Size = new System.Drawing.Size(50, 50);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // ManageSalesForm
             // 
@@ -482,12 +340,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelBackground.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
-            this.panelUpdateDiscount.ResumeLayout(false);
-            this.panelUpdateDiscount.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDiscountRate)).EndInit();
-            this.DiscountsPanel.ResumeLayout(false);
-            this.DiscountsPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listViewDiscounts)).EndInit();
+            this.SalesPanel.ResumeLayout(false);
+            this.SalesPanel.PerformLayout();
             this.panelSidebar.ResumeLayout(false);
             this.panelTopBar.ResumeLayout(false);
             this.panelTopBar.PerformLayout();
@@ -500,20 +354,8 @@
 
         protected System.Windows.Forms.Panel panelBackground;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Panel panelUpdateDiscount;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown nudDiscountRate;
-        private System.Windows.Forms.DateTimePicker dtpEndDate;
-        private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.Label lblUpdateDiscount;
-        private RoundedButton btnUpdateDiscount;
-        private System.Windows.Forms.Label lblDiscountRate;
-        private System.Windows.Forms.Label lblStartDate;
-        private System.Windows.Forms.Label lblEndDate;
-        private System.Windows.Forms.Panel DiscountsPanel;
+        private System.Windows.Forms.Panel SalesPanel;
         private System.Windows.Forms.Label lblSalesTitle;
-        private System.Windows.Forms.DataGridView listViewDiscounts;
-        private System.Windows.Forms.ListView listViewCustomers1;
         private System.Windows.Forms.Panel panelSidebar;
         private RoundedButton btnSuppliers;
         private RoundedButton btnStockPurchases;
@@ -527,5 +369,6 @@
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label lblLogo;
         private RoundedButton btnLogout;
+        private System.Windows.Forms.ListView listViewRecentSales;
     }
 }
