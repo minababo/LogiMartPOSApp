@@ -37,22 +37,18 @@ namespace LogiMartPOSApp
             }
         }
 
-
         private void ApplyRolePermissions(SqlConnection conn)
         {
             try
             {
-                // Fetch permissions for the logged-in user
                 string query = "SELECT PermissionName FROM GetUserPermissions(@UserID)";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    // Pass the current user's ID to the query
                     cmd.Parameters.AddWithValue("@UserID", currentUserId);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        // Initially disable all buttons
                         btnCustomers.Enabled = false;
                         btnProducts.Enabled = false;
                         btnSales.Enabled = false;
@@ -62,7 +58,6 @@ namespace LogiMartPOSApp
                         btnSuppliers.Enabled = false;
                         btnDiscounts.Enabled = false;
 
-                        // Enable buttons based on the user's permissions
                         while (reader.Read())
                         {
                             string permission = reader["PermissionName"].ToString();
@@ -95,7 +90,7 @@ namespace LogiMartPOSApp
                                     break;
 
                                 case "Manage Discounts":
-                                    btnDiscounts.Enabled = true; // Enable Discounts form access
+                                    btnDiscounts.Enabled = true;
                                     break;
                             }
                         }
@@ -107,8 +102,6 @@ namespace LogiMartPOSApp
                 MessageBox.Show("Error applying permissions: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
         private void LoadWelcomeMessage(SqlConnection conn)
         {
@@ -136,11 +129,6 @@ namespace LogiMartPOSApp
         {
             try
             {
-                if (conn.State == ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
-
                 string query = @"
             SELECT TOP 10 
                 InvoiceID, 
@@ -171,11 +159,17 @@ namespace LogiMartPOSApp
                         {
                             while (reader.Read())
                             {
-                                ListViewItem item = new ListViewItem(reader["InvoiceID"].ToString());
-                                item.SubItems.Add(reader["Cashier"].ToString());
-                                item.SubItems.Add(reader["Customer"].ToString());
-                                item.SubItems.Add(Convert.ToDateTime(reader["DateRecorded"]).ToString("yyyy-MM-dd"));
-                                item.SubItems.Add(Convert.ToDecimal(reader["Total"]).ToString("N2"));
+                                string invoiceId = reader["InvoiceID"].ToString();
+                                string cashier = reader["Cashier"].ToString();
+                                string customer = reader["Customer"].ToString();
+                                string dateRecorded = Convert.ToDateTime(reader["DateRecorded"]).ToString("yyyy-MM-dd");
+                                string total = Convert.ToDecimal(reader["Total"]).ToString("N2");
+
+                                ListViewItem item = new ListViewItem(invoiceId);
+                                item.SubItems.Add(cashier);
+                                item.SubItems.Add(customer);
+                                item.SubItems.Add(dateRecorded);
+                                item.SubItems.Add(total);
                                 listViewRecentSales.Items.Add(item);
                             }
                         }
@@ -184,10 +178,9 @@ namespace LogiMartPOSApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading recent sales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error loading recent sales: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void btnLogout_Click(object sender, EventArgs e)
         {

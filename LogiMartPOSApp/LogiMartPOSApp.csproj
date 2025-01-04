@@ -293,13 +293,22 @@
     <EmbeddedResource Include="ManagePurchasesForm.resx">
       <DependentUpon>ManagePurchasesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageSalesForm.resx">
+      <DependentUpon>ManageSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageSuppliersForm.resx">
       <DependentUpon>ManageSuppliersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSaleForm.resx">
+      <DependentUpon>NewSaleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LogiMartCustomer.xsc">
       <DependentUpon>LogiMartCustomer.xsd</DependentUpon>
@@ -387,6 +396,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\supplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

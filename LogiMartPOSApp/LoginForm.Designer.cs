@@ -31,6 +31,7 @@ namespace LogiMartPOSApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.btnExit = new System.Windows.Forms.Button();
             this.panelLogin = new RoundedPanel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
@@ -190,6 +191,7 @@ namespace LogiMartPOSApp
             this.Controls.Add(this.panelLogin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
