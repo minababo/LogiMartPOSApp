@@ -240,7 +240,7 @@ namespace LogiMartPOSApp
         {
             if (btnNewSale.Enabled)
             {
-                NewSaleForm newsale = new NewSaleForm();
+                NewSaleForm newsale = new NewSaleForm(currentUserId);
                 newsale.Show();
             }
         }

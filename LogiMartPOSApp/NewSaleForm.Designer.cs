@@ -388,6 +388,7 @@
             this.btnPlaceOrder.TabIndex = 24;
             this.btnPlaceOrder.Text = "Place Order";
             this.btnPlaceOrder.UseVisualStyleBackColor = false;
+            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
             // btnCancelOrder
             // 
@@ -403,6 +404,7 @@
             this.btnCancelOrder.TabIndex = 23;
             this.btnCancelOrder.Text = "Cancel Order";
             this.btnCancelOrder.UseVisualStyleBackColor = false;
+            this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
             // 
             // lblTotal
             // 
