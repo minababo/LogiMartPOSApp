@@ -47,11 +47,8 @@ namespace LogiMartPOSApp
                 try
                 {
                     conn.Open();
-                    string query = @"
-                SELECT U.UserID 
-                FROM [USER] U
-                INNER JOIN LOGIN L ON U.Us_LoginID = L.LoginID
-                WHERE L.Username = @Username AND L.Password = @Password";
+
+                    string query = "SELECT dbo.ValidateLogin(@Username, @Password)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {

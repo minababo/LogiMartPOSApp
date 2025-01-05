@@ -14,7 +14,9 @@ namespace LogiMartPOSApp
     public partial class ManageSalesForm : Form
     {
         private string connectionString = "Server=.;Database=LogiMartDB;Trusted_Connection=True;Connection Timeout=30;";
-        public ManageSalesForm()
+        private int currentUserId;
+
+        public ManageSalesForm(int userId)
         {
             InitializeComponent();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -30,6 +32,7 @@ namespace LogiMartPOSApp
                     MessageBox.Show($"Error during initialization: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            currentUserId = userId;
         }
         private void LoadRecentSales(SqlConnection conn)
         {
@@ -90,6 +93,13 @@ namespace LogiMartPOSApp
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            this.Hide();
+        }
+
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            NewSaleForm newsale = new NewSaleForm(currentUserId);
+            newsale.Show();
             this.Hide();
         }
     }

@@ -30,6 +30,7 @@ namespace LogiMartPOSApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageProductsForm));
             this.lblProductsTitle = new System.Windows.Forms.Label();
             this.productsPanel = new System.Windows.Forms.Panel();
             this.listViewProducts = new System.Windows.Forms.DataGridView();
@@ -390,6 +391,7 @@ namespace LogiMartPOSApp
             this.btnNewSale.TabIndex = 1;
             this.btnNewSale.Text = "New Sale";
             this.btnNewSale.UseVisualStyleBackColor = false;
+            this.btnNewSale.Click += new System.EventHandler(this.btnNewSale_Click);
             // 
             // btnProducts
             // 
@@ -471,6 +473,7 @@ namespace LogiMartPOSApp
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageProductsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageProductsForm";

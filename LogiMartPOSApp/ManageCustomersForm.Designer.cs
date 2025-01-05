@@ -30,6 +30,7 @@ namespace LogiMartPOSApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomersForm));
             this.lblLogo = new System.Windows.Forms.Label();
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
@@ -50,8 +51,8 @@ namespace LogiMartPOSApp
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.customersPanel = new System.Windows.Forms.Panel();
             this.lblCustomersTitle = new System.Windows.Forms.Label();
-            this.panelSidebar = new System.Windows.Forms.Panel();
             this.listViewCustomers = new System.Windows.Forms.DataGridView();
+            this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnDeleteCustomer = new RoundedButton();
             this.btnAddCustomer = new RoundedButton();
             this.btnSuppliers = new RoundedButton();
@@ -70,8 +71,8 @@ namespace LogiMartPOSApp
             this.panelDeleteCustomer.SuspendLayout();
             this.panelAddCustomer.SuspendLayout();
             this.customersPanel.SuspendLayout();
-            this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listViewCustomers)).BeginInit();
+            this.panelSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogo
@@ -305,6 +306,20 @@ namespace LogiMartPOSApp
             this.lblCustomersTitle.TabIndex = 0;
             this.lblCustomersTitle.Text = "Customers:";
             // 
+            // listViewCustomers
+            // 
+            this.listViewCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewCustomers.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.listViewCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listViewCustomers.Location = new System.Drawing.Point(20, 57);
+            this.listViewCustomers.Name = "listViewCustomers";
+            this.listViewCustomers.RowHeadersWidth = 62;
+            this.listViewCustomers.RowTemplate.Height = 28;
+            this.listViewCustomers.Size = new System.Drawing.Size(419, 650);
+            this.listViewCustomers.TabIndex = 3;
+            // 
             // panelSidebar
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -321,20 +336,6 @@ namespace LogiMartPOSApp
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(366, 800);
             this.panelSidebar.TabIndex = 1;
-            // 
-            // listViewCustomers
-            // 
-            this.listViewCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewCustomers.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.listViewCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listViewCustomers.Location = new System.Drawing.Point(20, 57);
-            this.listViewCustomers.Name = "listViewCustomers";
-            this.listViewCustomers.RowHeadersWidth = 62;
-            this.listViewCustomers.RowTemplate.Height = 28;
-            this.listViewCustomers.Size = new System.Drawing.Size(419, 650);
-            this.listViewCustomers.TabIndex = 3;
             // 
             // btnDeleteCustomer
             // 
@@ -418,6 +419,7 @@ namespace LogiMartPOSApp
             this.btnNewSale.TabIndex = 8;
             this.btnNewSale.Text = "New Sale";
             this.btnNewSale.UseVisualStyleBackColor = false;
+            this.btnNewSale.Click += new System.EventHandler(this.btnNewSale_Click);
             // 
             // btnReports
             // 
@@ -535,6 +537,7 @@ namespace LogiMartPOSApp
             this.Controls.Add(this.panelBackground);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageCustomersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageCustomersForm";
@@ -551,8 +554,8 @@ namespace LogiMartPOSApp
             this.panelAddCustomer.PerformLayout();
             this.customersPanel.ResumeLayout(false);
             this.customersPanel.PerformLayout();
-            this.panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listViewCustomers)).EndInit();
+            this.panelSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

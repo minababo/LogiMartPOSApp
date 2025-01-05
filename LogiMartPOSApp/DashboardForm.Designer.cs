@@ -32,6 +32,7 @@ namespace LogiMartPOSApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnSuppliers = new RoundedButton();
             this.btnStockPurchases = new RoundedButton();
@@ -407,6 +408,7 @@ namespace LogiMartPOSApp
             this.Controls.Add(this.panelBackground);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashboardForm";

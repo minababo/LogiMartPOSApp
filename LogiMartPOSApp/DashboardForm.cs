@@ -193,7 +193,7 @@ namespace LogiMartPOSApp
         {
             if (btnCustomers.Enabled)
             {
-                ManageCustomersForm customers = new ManageCustomersForm();
+                ManageCustomersForm customers = new ManageCustomersForm(currentUserId);
                 customers.Show();
             }
         }
@@ -202,7 +202,7 @@ namespace LogiMartPOSApp
         {
             if (btnSales.Enabled)
             {
-                ManageSalesForm sales = new ManageSalesForm();
+                ManageSalesForm sales = new ManageSalesForm(currentUserId);
                 sales.Show();
             }
         }
@@ -211,7 +211,7 @@ namespace LogiMartPOSApp
         {
             if (btnProducts.Enabled)
             {
-                ManageProductsForm products = new ManageProductsForm();
+                ManageProductsForm products = new ManageProductsForm(currentUserId);
                 products.Show();
             }
         }
@@ -222,7 +222,7 @@ namespace LogiMartPOSApp
         {
             if (btnReports.Enabled)
             {
-                ReportsForm reports = new ReportsForm();
+                ReportsForm reports = new ReportsForm(currentUserId);
                 reports.Show();
             }
         }
@@ -231,7 +231,7 @@ namespace LogiMartPOSApp
         {
             if (btnDiscounts.Enabled)
             {
-                ManageDiscountsForm discounts = new ManageDiscountsForm();
+                ManageDiscountsForm discounts = new ManageDiscountsForm(currentUserId);
                 discounts.Show();
             }
         }
@@ -247,13 +247,13 @@ namespace LogiMartPOSApp
 
         private void btnStockPurchases_Click(object sender, EventArgs e)
         {
-                ManagePurchasesForm purchases = new ManagePurchasesForm();
+                ManagePurchasesForm purchases = new ManagePurchasesForm(currentUserId);
                 purchases.Show();
         }
 
         private void btnSuppliers_Click(object sender, EventArgs e)
         {
-                ManageSuppliersForm suppliers = new ManageSuppliersForm();
+                ManageSuppliersForm suppliers = new ManageSuppliersForm(currentUserId);
                 suppliers.Show();
         }
     }

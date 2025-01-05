@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewSaleForm));
             this.lblLogo = new System.Windows.Forms.Label();
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
@@ -122,7 +123,7 @@
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackColor = System.Drawing.Color.Gainsboro;
             this.btnLogout.BackgroundImage = global::LogiMartPOSApp.Properties.Resources.Logout;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogout.CornerRadius = 20;
@@ -153,7 +154,7 @@
             // 
             // btnSuppliers
             // 
-            this.btnSuppliers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSuppliers.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSuppliers.CornerRadius = 20;
             this.btnSuppliers.FlatAppearance.BorderSize = 0;
             this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -171,7 +172,7 @@
             // 
             // btnStockPurchases
             // 
-            this.btnStockPurchases.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStockPurchases.BackColor = System.Drawing.Color.Gainsboro;
             this.btnStockPurchases.CornerRadius = 20;
             this.btnStockPurchases.FlatAppearance.BorderSize = 0;
             this.btnStockPurchases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -204,7 +205,7 @@
             // 
             // btnReports
             // 
-            this.btnReports.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReports.BackColor = System.Drawing.Color.Gainsboro;
             this.btnReports.CornerRadius = 20;
             this.btnReports.FlatAppearance.BorderSize = 0;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -222,7 +223,7 @@
             // 
             // btnProducts
             // 
-            this.btnProducts.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnProducts.BackColor = System.Drawing.Color.Gainsboro;
             this.btnProducts.CornerRadius = 20;
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -240,7 +241,7 @@
             // 
             // btnCustomers
             // 
-            this.btnCustomers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCustomers.BackColor = System.Drawing.Color.Gainsboro;
             this.btnCustomers.CornerRadius = 20;
             this.btnCustomers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(240)))), ((int)(((byte)(142)))));
             this.btnCustomers.FlatAppearance.BorderSize = 0;
@@ -259,7 +260,7 @@
             // 
             // btnSales
             // 
-            this.btnSales.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSales.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSales.CornerRadius = 20;
             this.btnSales.FlatAppearance.BorderSize = 0;
             this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -277,7 +278,7 @@
             // 
             // btnDiscounts
             // 
-            this.btnDiscounts.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDiscounts.BackColor = System.Drawing.Color.Gainsboro;
             this.btnDiscounts.CornerRadius = 20;
             this.btnDiscounts.FlatAppearance.BorderSize = 0;
             this.btnDiscounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -678,6 +679,7 @@
             this.ClientSize = new System.Drawing.Size(2560, 1600);
             this.Controls.Add(this.panelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewSaleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewSaleForm";

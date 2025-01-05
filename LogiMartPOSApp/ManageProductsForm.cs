@@ -14,13 +14,14 @@ namespace LogiMartPOSApp
     public partial class ManageProductsForm : Form
     {
         private string connectionString = "Server=.;Database=LogiMartDB;Trusted_Connection=True;";
-
-        public ManageProductsForm()
+        private int currentUserId;
+        public ManageProductsForm(int userId)
         {
             InitializeComponent();
             ConfigureDataGridView();
             LoadDropdowns();
             LoadProducts();
+            currentUserId = userId;
         }
 
         private void ConfigureDataGridView()
@@ -199,6 +200,13 @@ namespace LogiMartPOSApp
             {
                 MessageBox.Show($"Error adding product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            NewSaleForm newsale = new NewSaleForm(currentUserId);
+            newsale.Show();
+            this.Hide();
         }
     }
 }

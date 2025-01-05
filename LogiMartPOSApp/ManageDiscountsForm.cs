@@ -8,12 +8,13 @@ namespace LogiMartPOSApp
     public partial class ManageDiscountsForm : Form
     {
         private string connectionString = "Server=.;Database=LogiMartDB;Trusted_Connection=True;";
-
-        public ManageDiscountsForm()
+        private int currentUserId;
+        public ManageDiscountsForm(int userId)
         {
             InitializeComponent();
             LoadDiscounts();
             AdjustDataGridViewColumns();
+            currentUserId = userId;
         }
 
         private void LoadDiscounts()
@@ -122,6 +123,13 @@ namespace LogiMartPOSApp
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            this.Hide();
+        }
+
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            NewSaleForm newsale = new NewSaleForm(currentUserId);
+            newsale.Show();
             this.Hide();
         }
     }

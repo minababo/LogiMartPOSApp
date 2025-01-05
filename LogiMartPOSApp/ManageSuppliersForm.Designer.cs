@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageSuppliersForm));
             this.lblLogo = new System.Windows.Forms.Label();
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
@@ -203,6 +204,7 @@
             this.btnNewSale.TabIndex = 1;
             this.btnNewSale.Text = "New Sale";
             this.btnNewSale.UseVisualStyleBackColor = false;
+            this.btnNewSale.Click += new System.EventHandler(this.btnNewSale_Click);
             // 
             // btnProducts
             // 
@@ -284,9 +286,9 @@
             this.lblSupplierTitle.ForeColor = System.Drawing.Color.Black;
             this.lblSupplierTitle.Location = new System.Drawing.Point(20, 10);
             this.lblSupplierTitle.Name = "lblSupplierTitle";
-            this.lblSupplierTitle.Size = new System.Drawing.Size(154, 38);
+            this.lblSupplierTitle.Size = new System.Drawing.Size(146, 38);
             this.lblSupplierTitle.TabIndex = 0;
-            this.lblSupplierTitle.Text = "Purchases:";
+            this.lblSupplierTitle.Text = "Suppliers:";
             // 
             // mainPanel
             // 
@@ -338,7 +340,7 @@
             // 
             this.lblNewSupplier.AutoSize = true;
             this.lblNewSupplier.Font = new System.Drawing.Font("Segoe UI Historic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewSupplier.Location = new System.Drawing.Point(214, 33);
+            this.lblNewSupplier.Location = new System.Drawing.Point(200, 25);
             this.lblNewSupplier.Name = "lblNewSupplier";
             this.lblNewSupplier.Size = new System.Drawing.Size(222, 45);
             this.lblNewSupplier.TabIndex = 5;
@@ -447,6 +449,7 @@
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageSuppliersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -8,11 +8,12 @@ namespace LogiMartPOSApp
     public partial class ManageCustomersForm : Form
     {
         private string connectionString = "Server=.;Database=LogiMartDB;Trusted_Connection=True;Connection Timeout=30;";
-
-        public ManageCustomersForm()
+        private int currentUserId;
+        public ManageCustomersForm(int userId)
         {
             InitializeComponent();
             InitializeListView();
+            currentUserId = userId;
         }
 
         private void InitializeListView()
@@ -159,6 +160,13 @@ namespace LogiMartPOSApp
                     MessageBox.Show($"Error deleting customer: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            NewSaleForm newsale = new NewSaleForm(currentUserId);
+            newsale.Show();
+            this.Hide();
         }
     }
 }

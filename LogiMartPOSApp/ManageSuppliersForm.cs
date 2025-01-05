@@ -15,11 +15,13 @@ namespace LogiMartPOSApp
     public partial class ManageSuppliersForm : Form
     {
         private string connectionString = "Server=.;Database=LogiMartDB;Trusted_Connection=True;";
+        private int currentUserId;
 
-        public ManageSuppliersForm()
+        public ManageSuppliersForm(int userId)
         {
             InitializeComponent();
             LoadSuppliers();
+            currentUserId = userId;
         }
 
         private void LoadSuppliers()
@@ -111,6 +113,13 @@ namespace LogiMartPOSApp
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            this.Hide();
+        }
+
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            NewSaleForm newsale = new NewSaleForm(currentUserId);
+            newsale.Show();
             this.Hide();
         }
     }
