@@ -102,5 +102,47 @@ namespace LogiMartPOSApp
             newsale.Show();
             this.Hide();
         }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            ManageProductsForm products = new ManageProductsForm(currentUserId);
+            products.Show();
+            this.Hide();
+        }
+
+        private void btnStockPurchases_Click(object sender, EventArgs e)
+        {
+            ManagePurchasesForm purchases = new ManagePurchasesForm(currentUserId);
+            purchases.Show();
+            this.Hide();
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            ManageSuppliersForm suppliers = new ManageSuppliersForm(currentUserId);
+            suppliers.Show();
+            this.Hide();
+        }
+
+        private void btnDiscounts_Click(object sender, EventArgs e)
+        {
+            ManageDiscountsForm discounts = new ManageDiscountsForm(currentUserId);
+            discounts.Show();
+            this.Hide();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            ManageCustomersForm customers = new ManageCustomersForm(currentUserId);
+            customers.Show();
+            this.Hide();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            ReportsForm reports = new ReportsForm(currentUserId);
+            reports.Show();
+            this.Hide();
+        }
     }
 }

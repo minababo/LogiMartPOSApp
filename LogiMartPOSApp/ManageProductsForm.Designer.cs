@@ -340,6 +340,7 @@ namespace LogiMartPOSApp
             this.btnSuppliers.TabIndex = 16;
             this.btnSuppliers.Text = "        Suppliers";
             this.btnSuppliers.UseVisualStyleBackColor = false;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnStockPurchases
             // 
@@ -358,6 +359,7 @@ namespace LogiMartPOSApp
             this.btnStockPurchases.TabIndex = 15;
             this.btnStockPurchases.Text = "         Purchases";
             this.btnStockPurchases.UseVisualStyleBackColor = false;
+            this.btnStockPurchases.Click += new System.EventHandler(this.btnStockPurchases_Click);
             // 
             // btnReports
             // 
@@ -376,6 +378,7 @@ namespace LogiMartPOSApp
             this.btnReports.TabIndex = 6;
             this.btnReports.Text = "      Reports";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnNewSale
             // 
@@ -429,6 +432,7 @@ namespace LogiMartPOSApp
             this.btnCustomers.TabIndex = 5;
             this.btnCustomers.Text = "           Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnSales
             // 
@@ -447,6 +451,7 @@ namespace LogiMartPOSApp
             this.btnSales.TabIndex = 3;
             this.btnSales.Text = "   Sales";
             this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnDiscounts
             // 
@@ -465,6 +470,7 @@ namespace LogiMartPOSApp
             this.btnDiscounts.TabIndex = 4;
             this.btnDiscounts.Text = "          Discounts";
             this.btnDiscounts.UseVisualStyleBackColor = false;
+            this.btnDiscounts.Click += new System.EventHandler(this.btnDiscounts_Click);
             // 
             // ManageProductsForm
             // 

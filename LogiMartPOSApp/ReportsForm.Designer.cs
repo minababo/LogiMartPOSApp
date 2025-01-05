@@ -106,6 +106,7 @@
             this.btnSuppliers.TabIndex = 16;
             this.btnSuppliers.Text = "        Suppliers";
             this.btnSuppliers.UseVisualStyleBackColor = false;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnStockPurchases
             // 
@@ -124,6 +125,7 @@
             this.btnStockPurchases.TabIndex = 15;
             this.btnStockPurchases.Text = "         Purchases";
             this.btnStockPurchases.UseVisualStyleBackColor = false;
+            this.btnStockPurchases.Click += new System.EventHandler(this.btnStockPurchases_Click);
             // 
             // btnNewSale
             // 
@@ -139,6 +141,7 @@
             this.btnNewSale.TabIndex = 8;
             this.btnNewSale.Text = "New Sale";
             this.btnNewSale.UseVisualStyleBackColor = false;
+            this.btnNewSale.Click += new System.EventHandler(this.btnNewSale_Click);
             // 
             // btnReports
             // 
@@ -175,6 +178,7 @@
             this.btnProducts.TabIndex = 7;
             this.btnProducts.Text = "         Products";
             this.btnProducts.UseVisualStyleBackColor = false;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnCustomers
             // 
@@ -194,6 +198,7 @@
             this.btnCustomers.TabIndex = 10;
             this.btnCustomers.Text = "           Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnSales
             // 
@@ -212,6 +217,7 @@
             this.btnSales.TabIndex = 4;
             this.btnSales.Text = "   Sales";
             this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnDiscounts
             // 
@@ -230,6 +236,7 @@
             this.btnDiscounts.TabIndex = 5;
             this.btnDiscounts.Text = "          Discounts";
             this.btnDiscounts.UseVisualStyleBackColor = false;
+            this.btnDiscounts.Click += new System.EventHandler(this.btnDiscounts_Click);
             // 
             // panelTopBar
             // 
@@ -268,6 +275,7 @@
             this.btnLogout.Size = new System.Drawing.Size(50, 50);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panelBackground
             // 

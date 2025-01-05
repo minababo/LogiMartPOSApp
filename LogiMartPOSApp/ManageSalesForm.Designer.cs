@@ -149,6 +149,7 @@
             this.btnSuppliers.TabIndex = 16;
             this.btnSuppliers.Text = "        Suppliers";
             this.btnSuppliers.UseVisualStyleBackColor = false;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnStockPurchases
             // 
@@ -167,6 +168,7 @@
             this.btnStockPurchases.TabIndex = 15;
             this.btnStockPurchases.Text = "         Purchases";
             this.btnStockPurchases.UseVisualStyleBackColor = false;
+            this.btnStockPurchases.Click += new System.EventHandler(this.btnStockPurchases_Click);
             // 
             // btnNewSale
             // 
@@ -201,6 +203,7 @@
             this.btnReports.TabIndex = 9;
             this.btnReports.Text = "      Reports";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnProducts
             // 
@@ -219,6 +222,7 @@
             this.btnProducts.TabIndex = 7;
             this.btnProducts.Text = "         Products";
             this.btnProducts.UseVisualStyleBackColor = false;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnCustomers
             // 
@@ -238,6 +242,7 @@
             this.btnCustomers.TabIndex = 10;
             this.btnCustomers.Text = "           Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnSales
             // 
@@ -274,6 +279,7 @@
             this.btnDiscounts.TabIndex = 5;
             this.btnDiscounts.Text = "          Discounts";
             this.btnDiscounts.UseVisualStyleBackColor = false;
+            this.btnDiscounts.Click += new System.EventHandler(this.btnDiscounts_Click);
             // 
             // panelTopBar
             // 

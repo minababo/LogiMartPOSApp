@@ -171,6 +171,7 @@
             this.btnStockPurchases.TabIndex = 15;
             this.btnStockPurchases.Text = "         Purchases";
             this.btnStockPurchases.UseVisualStyleBackColor = false;
+            this.btnStockPurchases.Click += new System.EventHandler(this.btnStockPurchases_Click);
             // 
             // btnReports
             // 
@@ -189,6 +190,7 @@
             this.btnReports.TabIndex = 6;
             this.btnReports.Text = "      Reports";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnNewSale
             // 
@@ -223,6 +225,7 @@
             this.btnProducts.TabIndex = 2;
             this.btnProducts.Text = "         Products";
             this.btnProducts.UseVisualStyleBackColor = false;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnCustomers
             // 
@@ -242,6 +245,7 @@
             this.btnCustomers.TabIndex = 5;
             this.btnCustomers.Text = "           Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnSales
             // 
@@ -260,6 +264,7 @@
             this.btnSales.TabIndex = 3;
             this.btnSales.Text = "   Sales";
             this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnDiscounts
             // 
@@ -278,6 +283,7 @@
             this.btnDiscounts.TabIndex = 4;
             this.btnDiscounts.Text = "          Discounts";
             this.btnDiscounts.UseVisualStyleBackColor = false;
+            this.btnDiscounts.Click += new System.EventHandler(this.btnDiscounts_Click);
             // 
             // lblSupplierTitle
             // 

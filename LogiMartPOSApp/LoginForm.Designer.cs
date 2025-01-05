@@ -96,7 +96,7 @@ namespace LogiMartPOSApp
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(235)))), ((int)(((byte)(106)))));
+            this.btnLogin.BackColor = System.Drawing.Color.ForestGreen;
             this.btnLogin.CornerRadius = 20;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -143,9 +143,9 @@ namespace LogiMartPOSApp
             this.lblHeading.ForeColor = System.Drawing.Color.White;
             this.lblHeading.Location = new System.Drawing.Point(232, 186);
             this.lblHeading.Name = "lblHeading";
-            this.lblHeading.Size = new System.Drawing.Size(236, 48);
+            this.lblHeading.Size = new System.Drawing.Size(114, 48);
             this.lblHeading.TabIndex = 4;
-            this.lblHeading.Text = "Admin Login";
+            this.lblHeading.Text = "Login";
             // 
             // txtPassword
             // 
