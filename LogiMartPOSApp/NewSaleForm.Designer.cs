@@ -31,19 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewSaleForm));
             this.lblLogo = new System.Windows.Forms.Label();
             this.panelTopBar = new System.Windows.Forms.Panel();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new RoundedButton();
             this.panelSidebar = new System.Windows.Forms.Panel();
-            this.btnSuppliers = new RoundedButton();
-            this.btnStockPurchases = new RoundedButton();
             this.btnNewSale = new RoundedButton();
-            this.btnReports = new RoundedButton();
-            this.btnProducts = new RoundedButton();
-            this.btnCustomers = new RoundedButton();
-            this.btnSales = new RoundedButton();
-            this.btnDiscounts = new RoundedButton();
             this.lblSubtotal = new System.Windows.Forms.Label();
-            this.panelUpdateDiscount = new System.Windows.Forms.Panel();
             this.txtCustomerPhone = new System.Windows.Forms.TextBox();
             this.btnLinkCustomer = new System.Windows.Forms.Button();
             this.lblGreeting = new System.Windows.Forms.Label();
@@ -71,16 +61,26 @@
             this.btnCategory2 = new RoundedButton();
             this.btnCategory1 = new RoundedButton();
             this.gridProducts = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSuppliers = new RoundedButton();
+            this.btnStockPurchases = new RoundedButton();
+            this.btnReports = new RoundedButton();
+            this.btnProducts = new RoundedButton();
+            this.btnCustomers = new RoundedButton();
+            this.btnSales = new RoundedButton();
+            this.btnDiscounts = new RoundedButton();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new RoundedButton();
             this.panelTopBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panelSidebar.SuspendLayout();
-            this.panelUpdateDiscount.SuspendLayout();
             this.panelBackground.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panelBilling.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCart)).BeginInit();
             this.panelCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLogo
@@ -109,32 +109,6 @@
             this.panelTopBar.Size = new System.Drawing.Size(2560, 100);
             this.panelTopBar.TabIndex = 2;
             // 
-            // imgLogo
-            // 
-            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
-            this.imgLogo.BackgroundImage = global::LogiMartPOSApp.Properties.Resources.logo;
-            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgLogo.Location = new System.Drawing.Point(71, 27);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(50, 50);
-            this.imgLogo.TabIndex = 10;
-            this.imgLogo.TabStop = false;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLogout.BackgroundImage = global::LogiMartPOSApp.Properties.Resources.Logout;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.CornerRadius = 20;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Location = new System.Drawing.Point(2471, 27);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(50, 50);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            // 
             // panelSidebar
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -152,42 +126,6 @@
             this.panelSidebar.Size = new System.Drawing.Size(366, 1500);
             this.panelSidebar.TabIndex = 1;
             // 
-            // btnSuppliers
-            // 
-            this.btnSuppliers.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSuppliers.CornerRadius = 20;
-            this.btnSuppliers.FlatAppearance.BorderSize = 0;
-            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuppliers.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuppliers.Image = global::LogiMartPOSApp.Properties.Resources.supplier;
-            this.btnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuppliers.Location = new System.Drawing.Point(42, 792);
-            this.btnSuppliers.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.btnSuppliers.Name = "btnSuppliers";
-            this.btnSuppliers.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnSuppliers.Size = new System.Drawing.Size(274, 61);
-            this.btnSuppliers.TabIndex = 16;
-            this.btnSuppliers.Text = "        Suppliers";
-            this.btnSuppliers.UseVisualStyleBackColor = false;
-            // 
-            // btnStockPurchases
-            // 
-            this.btnStockPurchases.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnStockPurchases.CornerRadius = 20;
-            this.btnStockPurchases.FlatAppearance.BorderSize = 0;
-            this.btnStockPurchases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockPurchases.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockPurchases.Image = global::LogiMartPOSApp.Properties.Resources.stockpurchase;
-            this.btnStockPurchases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockPurchases.Location = new System.Drawing.Point(42, 691);
-            this.btnStockPurchases.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.btnStockPurchases.Name = "btnStockPurchases";
-            this.btnStockPurchases.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnStockPurchases.Size = new System.Drawing.Size(274, 61);
-            this.btnStockPurchases.TabIndex = 15;
-            this.btnStockPurchases.Text = "         Purchases";
-            this.btnStockPurchases.UseVisualStyleBackColor = false;
-            // 
             // btnNewSale
             // 
             this.btnNewSale.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -203,97 +141,6 @@
             this.btnNewSale.Text = "New Sale";
             this.btnNewSale.UseVisualStyleBackColor = false;
             // 
-            // btnReports
-            // 
-            this.btnReports.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnReports.CornerRadius = 20;
-            this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.Image = global::LogiMartPOSApp.Properties.Resources.report;
-            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(42, 590);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnReports.Size = new System.Drawing.Size(274, 61);
-            this.btnReports.TabIndex = 9;
-            this.btnReports.Text = "      Reports";
-            this.btnReports.UseVisualStyleBackColor = false;
-            // 
-            // btnProducts
-            // 
-            this.btnProducts.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnProducts.CornerRadius = 20;
-            this.btnProducts.FlatAppearance.BorderSize = 0;
-            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducts.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducts.Image = global::LogiMartPOSApp.Properties.Resources.stock;
-            this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProducts.Location = new System.Drawing.Point(42, 186);
-            this.btnProducts.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnProducts.Size = new System.Drawing.Size(274, 61);
-            this.btnProducts.TabIndex = 7;
-            this.btnProducts.Text = "         Products";
-            this.btnProducts.UseVisualStyleBackColor = false;
-            // 
-            // btnCustomers
-            // 
-            this.btnCustomers.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCustomers.CornerRadius = 20;
-            this.btnCustomers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(240)))), ((int)(((byte)(142)))));
-            this.btnCustomers.FlatAppearance.BorderSize = 0;
-            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.ForeColor = System.Drawing.Color.Black;
-            this.btnCustomers.Image = global::LogiMartPOSApp.Properties.Resources.customer;
-            this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomers.Location = new System.Drawing.Point(42, 489);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnCustomers.Size = new System.Drawing.Size(274, 61);
-            this.btnCustomers.TabIndex = 10;
-            this.btnCustomers.Text = "           Customers";
-            this.btnCustomers.UseVisualStyleBackColor = false;
-            // 
-            // btnSales
-            // 
-            this.btnSales.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSales.CornerRadius = 20;
-            this.btnSales.FlatAppearance.BorderSize = 0;
-            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSales.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSales.Image = global::LogiMartPOSApp.Properties.Resources.sales;
-            this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSales.Location = new System.Drawing.Point(42, 287);
-            this.btnSales.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnSales.Size = new System.Drawing.Size(274, 61);
-            this.btnSales.TabIndex = 4;
-            this.btnSales.Text = "   Sales";
-            this.btnSales.UseVisualStyleBackColor = false;
-            // 
-            // btnDiscounts
-            // 
-            this.btnDiscounts.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnDiscounts.CornerRadius = 20;
-            this.btnDiscounts.FlatAppearance.BorderSize = 0;
-            this.btnDiscounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiscounts.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiscounts.Image = global::LogiMartPOSApp.Properties.Resources.discount;
-            this.btnDiscounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiscounts.Location = new System.Drawing.Point(42, 388);
-            this.btnDiscounts.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.btnDiscounts.Name = "btnDiscounts";
-            this.btnDiscounts.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btnDiscounts.Size = new System.Drawing.Size(274, 61);
-            this.btnDiscounts.TabIndex = 5;
-            this.btnDiscounts.Text = "          Discounts";
-            this.btnDiscounts.UseVisualStyleBackColor = false;
-            // 
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
@@ -304,46 +151,35 @@
             this.lblSubtotal.TabIndex = 0;
             this.lblSubtotal.Text = "Subtotal: $0.00";
             // 
-            // panelUpdateDiscount
-            // 
-            this.panelUpdateDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelUpdateDiscount.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelUpdateDiscount.Controls.Add(this.txtCustomerPhone);
-            this.panelUpdateDiscount.Controls.Add(this.btnLinkCustomer);
-            this.panelUpdateDiscount.Controls.Add(this.lblGreeting);
-            this.panelUpdateDiscount.Location = new System.Drawing.Point(1123, 50);
-            this.panelUpdateDiscount.Name = "panelUpdateDiscount";
-            this.panelUpdateDiscount.Size = new System.Drawing.Size(1021, 489);
-            this.panelUpdateDiscount.TabIndex = 0;
-            // 
             // txtCustomerPhone
             // 
-            this.txtCustomerPhone.Location = new System.Drawing.Point(293, 96);
+            this.txtCustomerPhone.Location = new System.Drawing.Point(1400, 402);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.Size = new System.Drawing.Size(325, 39);
             this.txtCustomerPhone.TabIndex = 5;
             // 
             // btnLinkCustomer
             // 
+            this.btnLinkCustomer.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnLinkCustomer.FlatAppearance.BorderSize = 0;
             this.btnLinkCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkCustomer.Location = new System.Drawing.Point(90, 85);
+            this.btnLinkCustomer.Location = new System.Drawing.Point(1197, 388);
             this.btnLinkCustomer.Name = "btnLinkCustomer";
             this.btnLinkCustomer.Size = new System.Drawing.Size(197, 60);
             this.btnLinkCustomer.TabIndex = 4;
             this.btnLinkCustomer.Text = "Customer :";
-            this.btnLinkCustomer.UseVisualStyleBackColor = true;
+            this.btnLinkCustomer.UseVisualStyleBackColor = false;
             this.btnLinkCustomer.Click += new System.EventHandler(this.btnLinkCustomer_Click);
             // 
             // lblGreeting
             // 
             this.lblGreeting.AutoSize = true;
             this.lblGreeting.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGreeting.Location = new System.Drawing.Point(124, 206);
+            this.lblGreeting.Location = new System.Drawing.Point(1185, 456);
             this.lblGreeting.Name = "lblGreeting";
-            this.lblGreeting.Size = new System.Drawing.Size(188, 70);
+            this.lblGreeting.Size = new System.Drawing.Size(620, 70);
             this.lblGreeting.TabIndex = 2;
-            this.lblGreeting.Text = "Hello, ";
+            this.lblGreeting.Text = "Hello, [Customer Name]";
             // 
             // panelBackground
             // 
@@ -361,13 +197,16 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(247)))), ((int)(((byte)(193)))));
+            this.mainPanel.Controls.Add(this.pictureBox1);
             this.mainPanel.Controls.Add(this.panelBilling);
+            this.mainPanel.Controls.Add(this.txtCustomerPhone);
             this.mainPanel.Controls.Add(this.btnSearchProduct);
+            this.mainPanel.Controls.Add(this.btnLinkCustomer);
             this.mainPanel.Controls.Add(this.txtSearchProduct);
+            this.mainPanel.Controls.Add(this.lblGreeting);
             this.mainPanel.Controls.Add(this.lblSearch);
             this.mainPanel.Controls.Add(this.panelCategories);
             this.mainPanel.Controls.Add(this.gridProducts);
-            this.mainPanel.Controls.Add(this.panelUpdateDiscount);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(366, 100);
             this.mainPanel.Name = "mainPanel";
@@ -671,6 +510,169 @@
             this.gridProducts.Size = new System.Drawing.Size(1034, 894);
             this.gridProducts.TabIndex = 3;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LogiMartPOSApp.Properties.Resources.Welcome_to;
+            this.pictureBox1.Location = new System.Drawing.Point(1197, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(861, 303);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnSuppliers
+            // 
+            this.btnSuppliers.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSuppliers.CornerRadius = 20;
+            this.btnSuppliers.FlatAppearance.BorderSize = 0;
+            this.btnSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuppliers.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuppliers.Image = global::LogiMartPOSApp.Properties.Resources.supplier;
+            this.btnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuppliers.Location = new System.Drawing.Point(42, 792);
+            this.btnSuppliers.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnSuppliers.Size = new System.Drawing.Size(274, 61);
+            this.btnSuppliers.TabIndex = 16;
+            this.btnSuppliers.Text = "        Suppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = false;
+            // 
+            // btnStockPurchases
+            // 
+            this.btnStockPurchases.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnStockPurchases.CornerRadius = 20;
+            this.btnStockPurchases.FlatAppearance.BorderSize = 0;
+            this.btnStockPurchases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockPurchases.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockPurchases.Image = global::LogiMartPOSApp.Properties.Resources.stockpurchase;
+            this.btnStockPurchases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockPurchases.Location = new System.Drawing.Point(42, 691);
+            this.btnStockPurchases.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnStockPurchases.Name = "btnStockPurchases";
+            this.btnStockPurchases.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnStockPurchases.Size = new System.Drawing.Size(274, 61);
+            this.btnStockPurchases.TabIndex = 15;
+            this.btnStockPurchases.Text = "         Purchases";
+            this.btnStockPurchases.UseVisualStyleBackColor = false;
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnReports.CornerRadius = 20;
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.Image = global::LogiMartPOSApp.Properties.Resources.report;
+            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReports.Location = new System.Drawing.Point(42, 590);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnReports.Size = new System.Drawing.Size(274, 61);
+            this.btnReports.TabIndex = 9;
+            this.btnReports.Text = "      Reports";
+            this.btnReports.UseVisualStyleBackColor = false;
+            // 
+            // btnProducts
+            // 
+            this.btnProducts.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnProducts.CornerRadius = 20;
+            this.btnProducts.FlatAppearance.BorderSize = 0;
+            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducts.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducts.Image = global::LogiMartPOSApp.Properties.Resources.stock;
+            this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProducts.Location = new System.Drawing.Point(42, 186);
+            this.btnProducts.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnProducts.Name = "btnProducts";
+            this.btnProducts.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnProducts.Size = new System.Drawing.Size(274, 61);
+            this.btnProducts.TabIndex = 7;
+            this.btnProducts.Text = "         Products";
+            this.btnProducts.UseVisualStyleBackColor = false;
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCustomers.CornerRadius = 20;
+            this.btnCustomers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(240)))), ((int)(((byte)(142)))));
+            this.btnCustomers.FlatAppearance.BorderSize = 0;
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomers.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomers.Image = global::LogiMartPOSApp.Properties.Resources.customer;
+            this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomers.Location = new System.Drawing.Point(42, 489);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnCustomers.Size = new System.Drawing.Size(274, 61);
+            this.btnCustomers.TabIndex = 10;
+            this.btnCustomers.Text = "           Customers";
+            this.btnCustomers.UseVisualStyleBackColor = false;
+            // 
+            // btnSales
+            // 
+            this.btnSales.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSales.CornerRadius = 20;
+            this.btnSales.FlatAppearance.BorderSize = 0;
+            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSales.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSales.Image = global::LogiMartPOSApp.Properties.Resources.sales;
+            this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSales.Location = new System.Drawing.Point(42, 287);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnSales.Size = new System.Drawing.Size(274, 61);
+            this.btnSales.TabIndex = 4;
+            this.btnSales.Text = "   Sales";
+            this.btnSales.UseVisualStyleBackColor = false;
+            // 
+            // btnDiscounts
+            // 
+            this.btnDiscounts.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDiscounts.CornerRadius = 20;
+            this.btnDiscounts.FlatAppearance.BorderSize = 0;
+            this.btnDiscounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiscounts.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscounts.Image = global::LogiMartPOSApp.Properties.Resources.discount;
+            this.btnDiscounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiscounts.Location = new System.Drawing.Point(42, 388);
+            this.btnDiscounts.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.btnDiscounts.Name = "btnDiscounts";
+            this.btnDiscounts.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnDiscounts.Size = new System.Drawing.Size(274, 61);
+            this.btnDiscounts.TabIndex = 5;
+            this.btnDiscounts.Text = "          Discounts";
+            this.btnDiscounts.UseVisualStyleBackColor = false;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
+            this.imgLogo.BackgroundImage = global::LogiMartPOSApp.Properties.Resources.logo;
+            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgLogo.Location = new System.Drawing.Point(71, 27);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(50, 50);
+            this.imgLogo.TabIndex = 10;
+            this.imgLogo.TabStop = false;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogout.BackgroundImage = global::LogiMartPOSApp.Properties.Resources.Logout;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.CornerRadius = 20;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Location = new System.Drawing.Point(2471, 27);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(50, 50);
+            this.btnLogout.TabIndex = 3;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            // 
             // NewSaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -686,10 +688,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelTopBar.ResumeLayout(false);
             this.panelTopBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panelSidebar.ResumeLayout(false);
-            this.panelUpdateDiscount.ResumeLayout(false);
-            this.panelUpdateDiscount.PerformLayout();
             this.panelBackground.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
@@ -699,6 +698,8 @@
             this.panelCategories.ResumeLayout(false);
             this.panelCategories.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -719,7 +720,6 @@
         private System.Windows.Forms.Panel panelSidebar;
         private RoundedButton btnDiscounts;
         private System.Windows.Forms.Label lblSubtotal;
-        private System.Windows.Forms.Panel panelUpdateDiscount;
         protected System.Windows.Forms.Panel panelBackground;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel panelCategories;
@@ -747,5 +747,6 @@
         private System.Windows.Forms.Label lblGreeting;
         private System.Windows.Forms.TextBox txtCustomerPhone;
         private System.Windows.Forms.Button btnLinkCustomer;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

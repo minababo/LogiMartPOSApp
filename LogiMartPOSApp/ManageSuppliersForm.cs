@@ -32,7 +32,7 @@ namespace LogiMartPOSApp
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM vw_SuppliersWithProductsConcatenated";
+                    string query = "SELECT * FROM vw_Suppliers";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {

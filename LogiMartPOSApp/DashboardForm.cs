@@ -28,7 +28,8 @@ namespace LogiMartPOSApp
                     conn.Open();
                     ApplyRolePermissions(conn);
                     LoadWelcomeMessage(conn);
-                    LoadRecentSales(conn);
+                    LoadRecentSalesToGrid(conn);
+
                 }
                 catch (Exception ex)
                 {
@@ -125,55 +126,32 @@ namespace LogiMartPOSApp
             }
         }
 
-        private void LoadRecentSales(SqlConnection conn)
+        private void LoadRecentSalesToGrid(SqlConnection conn)
         {
             try
             {
-                string query = @"
-            SELECT TOP 10 
-                InvoiceID, 
-                Cashier, 
-                Customer, 
-                DateRecorded, 
-                Total
-            FROM vw_RecentSales
-            ORDER BY DateRecorded DESC";
+                string query = "SELECT * FROM vw_RecentSales";
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        listViewRecentSales.Items.Clear();
-                        listViewRecentSales.Columns.Clear();
-                        listViewRecentSales.Columns.Add("Invoice ID", 100);
-                        listViewRecentSales.Columns.Add("Cashier", 150);
-                        listViewRecentSales.Columns.Add("Customer", 150);
-                        listViewRecentSales.Columns.Add("Date", 150);
-                        listViewRecentSales.Columns.Add("Total", 100);
+                    DataTable dataTable = new DataTable();
 
-                        if (!reader.HasRows)
-                        {
-                            MessageBox.Show("No recent sales found!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            while (reader.Read())
-                            {
-                                string invoiceId = reader["InvoiceID"].ToString();
-                                string cashier = reader["Cashier"].ToString();
-                                string customer = reader["Customer"].ToString();
-                                string dateRecorded = Convert.ToDateTime(reader["DateRecorded"]).ToString("yyyy-MM-dd");
-                                string total = Convert.ToDecimal(reader["Total"]).ToString("N2");
+                    adapter.Fill(dataTable);
 
-                                ListViewItem item = new ListViewItem(invoiceId);
-                                item.SubItems.Add(cashier);
-                                item.SubItems.Add(customer);
-                                item.SubItems.Add(dateRecorded);
-                                item.SubItems.Add(total);
-                                listViewRecentSales.Items.Add(item);
-                            }
-                        }
-                    }
+                    dataGridViewRecentSales.DataSource = dataTable;
+
+                    dataGridViewRecentSales.Columns["InvoiceID"].Width = 100;
+                    dataGridViewRecentSales.Columns["Cashier"].Width = 150;
+                    dataGridViewRecentSales.Columns["Customer"].Width = 150;
+                    dataGridViewRecentSales.Columns["SubTotal"].Width = 100;
+                    dataGridViewRecentSales.Columns["TotalDiscount"].Width = 100;
+                    dataGridViewRecentSales.Columns["TotalAmount"].Width = 100;
+                    dataGridViewRecentSales.Columns["DateRecorded"].Width = 150;
+
+                    dataGridViewRecentSales.Columns["DateRecorded"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    dataGridViewRecentSales.Columns["SubTotal"].DefaultCellStyle.Format = "N2";
+                    dataGridViewRecentSales.Columns["TotalDiscount"].DefaultCellStyle.Format = "N2";
+                    dataGridViewRecentSales.Columns["TotalAmount"].DefaultCellStyle.Format = "N2";
                 }
             }
             catch (Exception ex)
@@ -181,6 +159,9 @@ namespace LogiMartPOSApp
                 MessageBox.Show($"Error loading recent sales: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {

@@ -400,6 +400,36 @@
   <ItemGroup>
     <None Include="Resources\right-arrow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dicsount.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discount.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discount1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Welcome_to.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logimart.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

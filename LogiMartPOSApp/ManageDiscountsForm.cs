@@ -110,10 +110,10 @@ namespace LogiMartPOSApp
             listViewDiscounts.Columns["StartDate"].HeaderText = "Starting Date";
             listViewDiscounts.Columns["EndDate"].HeaderText = "Ending Date";
 
-            listViewDiscounts.Columns["Month"].Width = 150;
-            listViewDiscounts.Columns["DiscountRate"].Width = 200;
-            listViewDiscounts.Columns["StartDate"].Width = 150;
-            listViewDiscounts.Columns["EndDate"].Width = 150;
+            listViewDiscounts.Columns["Month"].Width = 225;
+            listViewDiscounts.Columns["DiscountRate"].Width = 225;
+            listViewDiscounts.Columns["StartDate"].Width = 225;
+            listViewDiscounts.Columns["EndDate"].Width = 225;
 
             listViewDiscounts.Columns["DiscountRate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             listViewDiscounts.Columns["Month"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;

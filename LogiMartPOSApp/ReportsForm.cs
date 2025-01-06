@@ -113,8 +113,8 @@ namespace LogiMartPOSApp
                     conn.Open();
 
                     string storedProcedure = reportType == "Daily"
-                        ? "GenerateDailyReportWithMetrics"
-                        : "GenerateMonthlyReportWithMetrics";
+                        ? "GenerateDailyReport"
+                        : "GenerateMonthlyReport";
 
                     using (SqlCommand cmd = new SqlCommand(storedProcedure, conn))
                     {

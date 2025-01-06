@@ -25,7 +25,7 @@ namespace LogiMartPOSApp
                 {
                     conn.Open();
 
-                    LoadRecentSales(conn);
+                    LoadInvoiceData();
                 }
                 catch (Exception ex)
                 {
@@ -34,60 +34,29 @@ namespace LogiMartPOSApp
             }
             currentUserId = userId;
         }
-        private void LoadRecentSales(SqlConnection conn)
+        private void LoadInvoiceData()
         {
             try
             {
-                string query = @"
-            SELECT TOP 10 
-                InvoiceID, 
-                Cashier, 
-                Customer, 
-                DateRecorded, 
-                Total
-            FROM vw_RecentSales
-            ORDER BY DateRecorded DESC";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    connection.Open();
+
+                    string query = "SELECT * FROM vw_InvoiceDetails";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    listViewSales.DataSource = dataTable;
+                    foreach (DataGridViewColumn column in listViewSales.Columns)
                     {
-                        listViewRecentSales.Items.Clear();
-                        listViewRecentSales.Columns.Clear();
-                        listViewRecentSales.Columns.Add("Invoice ID", 100);
-                        listViewRecentSales.Columns.Add("Cashier", 150);
-                        listViewRecentSales.Columns.Add("Customer", 150);
-                        listViewRecentSales.Columns.Add("Date", 150);
-                        listViewRecentSales.Columns.Add("Total", 100);
-
-                        if (!reader.HasRows)
-                        {
-                            MessageBox.Show("No recent sales found!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            while (reader.Read())
-                            {
-                                string invoiceId = reader["InvoiceID"].ToString();
-                                string cashier = reader["Cashier"].ToString();
-                                string customer = reader["Customer"].ToString();
-                                string dateRecorded = Convert.ToDateTime(reader["DateRecorded"]).ToString("yyyy-MM-dd");
-                                string total = Convert.ToDecimal(reader["Total"]).ToString("N2");
-
-                                ListViewItem item = new ListViewItem(invoiceId);
-                                item.SubItems.Add(cashier);
-                                item.SubItems.Add(customer);
-                                item.SubItems.Add(dateRecorded);
-                                item.SubItems.Add(total);
-                                listViewRecentSales.Items.Add(item);
-                            }
-                        }
+                        column.Width = 130;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading recent sales: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

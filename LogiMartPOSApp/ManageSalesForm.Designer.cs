@@ -32,7 +32,6 @@
             this.panelBackground = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.SalesPanel = new System.Windows.Forms.Panel();
-            this.listViewRecentSales = new System.Windows.Forms.ListView();
             this.lblSalesTitle = new System.Windows.Forms.Label();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnSuppliers = new RoundedButton();
@@ -47,12 +46,14 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblLogo = new System.Windows.Forms.Label();
             this.btnLogout = new RoundedButton();
+            this.listViewSales = new System.Windows.Forms.DataGridView();
             this.panelBackground.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SalesPanel.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             this.panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listViewSales)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -84,25 +85,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SalesPanel.BackColor = System.Drawing.Color.White;
-            this.SalesPanel.Controls.Add(this.listViewRecentSales);
             this.SalesPanel.Controls.Add(this.lblSalesTitle);
+            this.SalesPanel.Controls.Add(this.listViewSales);
             this.SalesPanel.Location = new System.Drawing.Point(50, 50);
             this.SalesPanel.Name = "SalesPanel";
             this.SalesPanel.Size = new System.Drawing.Size(1145, 725);
             this.SalesPanel.TabIndex = 0;
-            // 
-            // listViewRecentSales
-            // 
-            this.listViewRecentSales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewRecentSales.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewRecentSales.HideSelection = false;
-            this.listViewRecentSales.Location = new System.Drawing.Point(30, 59);
-            this.listViewRecentSales.Name = "listViewRecentSales";
-            this.listViewRecentSales.Size = new System.Drawing.Size(1084, 632);
-            this.listViewRecentSales.TabIndex = 2;
-            this.listViewRecentSales.UseCompatibleStateImageBehavior = false;
-            this.listViewRecentSales.View = System.Windows.Forms.View.Details;
             // 
             // lblSalesTitle
             // 
@@ -334,6 +322,20 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // listViewSales
+            // 
+            this.listViewSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewSales.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.listViewSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listViewSales.Location = new System.Drawing.Point(27, 59);
+            this.listViewSales.Name = "listViewSales";
+            this.listViewSales.RowHeadersWidth = 62;
+            this.listViewSales.RowTemplate.Height = 28;
+            this.listViewSales.Size = new System.Drawing.Size(1087, 632);
+            this.listViewSales.TabIndex = 3;
+            // 
             // ManageSalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -355,6 +357,7 @@
             this.panelTopBar.ResumeLayout(false);
             this.panelTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listViewSales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,6 +381,6 @@
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label lblLogo;
         private RoundedButton btnLogout;
-        private System.Windows.Forms.ListView listViewRecentSales;
+        private System.Windows.Forms.DataGridView listViewSales;
     }
 }
